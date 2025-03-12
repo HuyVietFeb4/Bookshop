@@ -235,7 +235,10 @@ footer {
 }
 
 .store_info #or {
-    margin: 0 30px;
+    margin: 0 200px;
+}
+.contact_info p {
+    color: dimgray;
 }
 
 #copyright {

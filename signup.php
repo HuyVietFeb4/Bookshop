@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="css/signin.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
@@ -29,7 +29,7 @@
     </header>
 
     <div class="container">
-        <h2>Sign In With</h2>
+        <h2>Sign Up With</h2>
         <div class="social-login">
             <button class="facebook"><img id="fb_icon" src="image/social_media/facebook.svg"/>Facebook</button>
             <button class="google"><img id="gg_icon" src="image/social_media/google.svg"/>Google</button>
@@ -42,11 +42,14 @@
             <div class="input-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password">
-                <a href="#" class="forgot">Forgot?</a>
             </div>
-            <button type="submit" class="sign-in">Sign In</button>
+            <div class="input-group">
+                <label for="confirm_password">Confirm password</label>
+                <input type="password" id="confirm_password" name="confirm_password">
+            </div>
+            <button type="submit" class="sign-in">Sign Up</button>
         </form>
-        <p class="signup">Not a member? <a href="index.php?page=signup">Sign up now</a></p>
+        <p class="signup">Already have an account? <a href="index.php?page=signin">Sign in now</a></p>
     </div>
 
     <footer>
