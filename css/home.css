@@ -161,7 +161,6 @@ a, a:visited, a:hover, a:active {
     flex-direction: column;
     margin: 20px 30px;
     width: 300px;
-
 }
 
 #book_img {
@@ -176,12 +175,16 @@ a, a:visited, a:hover, a:active {
     padding: 10px;
 }
 
-.book_info h3 {
+.book_info #book_title {
     font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
 }
 
 .book_info #description {
-    color: gray
+    color: gray;
+    font-size: 16px;
+    margin-bottom: 8px;
 }
 
 .book_info #price {
@@ -192,6 +195,7 @@ a, a:visited, a:hover, a:active {
 .btn_book {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 #add_to_cart {
     background-color: royalblue;
@@ -199,8 +203,10 @@ a, a:visited, a:hover, a:active {
     color: white;
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: 5px;
-    margin-left: 10px;
+    border-radius: 20px;
+    margin-left: 16px;
+    height: 40px;
+    font-size: 16px;
 }
 
 /*********************************************************************** Footer section ***********************************************************************/
@@ -307,5 +313,10 @@ footer {
     }
     #copyright { 
         font-size: 20px;
+    }
+}
+@media (max-width: 375px) { 
+    #genre_img {
+        width: 300px;
     }
 }
