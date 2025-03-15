@@ -39,28 +39,28 @@
     <section class="genres">
         <div class="intro">
             <p id="title">Browse The Genres</p>
-            <p id="content">Discover new genres or finding new kind books to read!</p>
+            <p id="content">Discover new genres or finding new kind of books to read!</p>
         </div>
         
         <div class="genre_list">
             <div class="genre_card">
                 <img id = "genre_img" src="image/books/default.jpg">
-                <p>Something</p>
+                <p id="genre_name">Something</p>
             </div>
 
             <div class="genre_card">
                 <img id = "genre_img" src="image/books/default.jpg">
-                <p>Something</p>
+                <p id="genre_name">Something</p>
             </div>
 
             <div class="genre_card">
                 <img id = "genre_img" src="image/books/default.jpg">
-                <p>Something</p>
+                <p id="genre_name">Something</p>
             </div>
 
             <div class="genre_card">
                 <img id = "genre_img" src="image/books/default.jpg">
-                <p>Something</p>
+                <p id="genre_name">Something</p>
             </div>
         </div>
         <div class="btn_explore_more">

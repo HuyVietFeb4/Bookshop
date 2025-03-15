@@ -105,7 +105,9 @@ a, a:visited, a:hover, a:active {
     font-size: 20px;
     color: LightSlateGrey;
 }
-
+#genre_name {
+    font-weight: bold;
+}
 .genre_list {
     display: flex;
     flex-wrap: wrap;
@@ -118,6 +120,12 @@ a, a:visited, a:hover, a:active {
     flex-direction: column;
     text-align: center;
     margin: 0px 30px;
+    transition: margin 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.genre_card:hover {
+    margin-top: -50px;
 }
 #genre_img {
     width: 380px;
@@ -161,6 +169,13 @@ a, a:visited, a:hover, a:active {
     flex-direction: column;
     margin: 20px 30px;
     width: 300px;
+    transition: margin 0.2s ease-in-out;
+    cursor: pointer;
+    box-shadow: 5px 10px 5px gray;
+}
+
+.book_card:hover {
+    margin-top: -50px;
 }
 
 #book_img {
@@ -314,9 +329,18 @@ footer {
     #copyright { 
         font-size: 20px;
     }
+
+    .genre_card:hover, .book_card:hover {
+        margin-top: -10px;
+    }
+
+    
 }
 @media (max-width: 375px) { 
     #genre_img {
         width: 300px;
+    }
+    .genre_card:hover, .book_card:hover {
+        margin-top: -10px;
     }
 }

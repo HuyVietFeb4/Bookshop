@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <title>Home</title>
+    <title>Books</title>
     <link rel="stylesheet" href="css/books.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
@@ -30,13 +30,13 @@
     </header>
 
     <section class="welcome_area">
-            <p id="welcome_title">Books</p>
+        <p id="welcome_title">Books</p>
     </section>
 
     <section class="filter_area">
         <div class="search_area">
-            <button id="search_button"><img src="image/magnifying-glass.png"></button>
             <input type="text" id="search_bar" placeholder="Search something...">
+            <button id="search_button"><img src="image/search.png"></button>
         </div>
 
         <form class="sort_form">
@@ -44,6 +44,7 @@
                 <option value="_">Sort by</option>
                 <option value="title">Title</option>
                 <option value="price">Price</option>
+                <option value="star">Stars</option>
             </select>
         
             <select for="sort_order" id="sort_order" name="sort_order">
@@ -53,7 +54,6 @@
             </select>
             <input id ="confirm_sort" type="submit" value="Sort"/>
         </form>
-
         
     </section>
 
@@ -91,6 +91,90 @@
                 </div>
             </div>
         </div>
+
+        <div class="book_card">
+            <img id = "book_img" src="image/books/default.jpg">
+            <div class="book_info">
+                <p id="book_title">Title Lorem ipsum</p>
+                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
+                <div class="btn_book">
+                    <p id="price">VND 234.422</p>
+                    <button id="add_to_cart">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="book_card">
+            <img id = "book_img" src="image/books/default.jpg">
+            <div class="book_info">
+                <p id="book_title">Title Lorem ipsum</p>
+                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
+                <div class="btn_book">
+                    <p id="price">VND 234.422</p>
+                    <button id="add_to_cart">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="book_card">
+            <img id = "book_img" src="image/books/default.jpg">
+            <div class="book_info">
+                <p id="book_title">Title Lorem ipsum</p>
+                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
+                <div class="btn_book">
+                    <p id="price">VND 234.422</p>
+                    <button id="add_to_cart">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="book_card">
+            <img id = "book_img" src="image/books/default.jpg">
+            <div class="book_info">
+                <p id="book_title">Title Lorem ipsum</p>
+                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
+                <div class="btn_book">
+                    <p id="price">VND 234.422</p>
+                    <button id="add_to_cart">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="book_card">
+            <img id = "book_img" src="image/books/default.jpg">
+            <div class="book_info">
+                <p id="book_title">Title Lorem ipsum</p>
+                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
+                <div class="btn_book">
+                    <p id="price">VND 234.422</p>
+                    <button id="add_to_cart">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="book_card">
+            <img id = "book_img" src="image/books/default.jpg">
+            <div class="book_info">
+                <p id="book_title">Title Lorem ipsum</p>
+                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
+                <div class="btn_book">
+                    <p id="price">VND 234.422</p>
+                    <button id="add_to_cart">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="book_card">
+            <img id = "book_img" src="image/books/default.jpg">
+            <div class="book_info">
+                <p id="book_title">Title Lorem ipsum</p>
+                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
+                <div class="btn_book">
+                    <p id="price">VND 234.422</p>
+                    <button id="add_to_cart">Add to cart</button>
+                </div>
+            </div>
+        </div>
     </section>
     
     <section class="page_area">
@@ -101,6 +185,39 @@
         <div id="next_page">Next</div>
     </section>
 
+    <section class="benefit_area">
+        <div class="benefit_content">
+            <img src="image/benefit/choice.png">
+            <div class="content_container">
+                <p id="benefit_title">Diverse selection</p>
+                <p id="benefit_detail">Over 1000+ books to choose</p>
+            </div>
+        </div>
+
+        <div class="benefit_content">
+            <img src="image/benefit/free-delivery.png">
+            <div class="content_container">
+                <p id="benefit_title">Free Shipping</p>
+                <p id="benefit_detail">Order over 300.000 VND</p>
+            </div>
+        </div>
+
+        <div class="benefit_content">
+            <img src="image/benefit/coupon.png">
+            <div class="content_container">
+                <p id="benefit_title">Exclusive Offers and Discounts</p>
+                <p id="benefit_detail">Sales happen every week</p>
+            </div>
+        </div>
+
+        <div class="benefit_content">
+            <img src="image/benefit/customer-support.png">
+            <div class="content_container">
+                <p id="benefit_title">24/7 Support</p>
+                <p id="benefit_detail">Dedicated support</p>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="store_info">
             <div class="contact_info">
