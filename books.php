@@ -62,7 +62,13 @@
             <img id = "book_img" src="image/books/default.jpg">
             <div class="book_info">
                 <p id="book_title">Title Lorem ipsum</p>
-                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
+                <div class="star_container">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                </div>
                 <div class="btn_book">
                     <p id="price">VND 234.422</p>
                     <button id="add_to_cart">Add to cart</button>
@@ -73,7 +79,13 @@
             <img id = "book_img" src="image/books/default.jpg">
             <div class="book_info">
                 <p id="book_title">Title Lorem ipsum</p>
-                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
+                <div class="star_container">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                </div>
                 <div class="btn_book">
                     <p id="price">VND 234.422</p>
                     <button id="add_to_cart">Add to cart</button>
@@ -84,43 +96,13 @@
             <img id = "book_img" src="image/books/default.jpg">
             <div class="book_info">
                 <p id="book_title">Title Lorem ipsum</p>
-                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
-                <div class="btn_book">
-                    <p id="price">VND 234.422</p>
-                    <button id="add_to_cart">Add to cart</button>
+                <div class="star_container">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/half-star.jpg">
                 </div>
-            </div>
-        </div>
-
-        <div class="book_card">
-            <img id = "book_img" src="image/books/default.jpg">
-            <div class="book_info">
-                <p id="book_title">Title Lorem ipsum</p>
-                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
-                <div class="btn_book">
-                    <p id="price">VND 234.422</p>
-                    <button id="add_to_cart">Add to cart</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="book_card">
-            <img id = "book_img" src="image/books/default.jpg">
-            <div class="book_info">
-                <p id="book_title">Title Lorem ipsum</p>
-                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
-                <div class="btn_book">
-                    <p id="price">VND 234.422</p>
-                    <button id="add_to_cart">Add to cart</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="book_card">
-            <img id = "book_img" src="image/books/default.jpg">
-            <div class="book_info">
-                <p id="book_title">Title Lorem ipsum</p>
-                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
                 <div class="btn_book">
                     <p id="price">VND 234.422</p>
                     <button id="add_to_cart">Add to cart</button>
@@ -132,7 +114,12 @@
             <img id = "book_img" src="image/books/default.jpg">
             <div class="book_info">
                 <p id="book_title">Title Lorem ipsum</p>
-                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
+                <div class="star_container">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/half-star.jpg">
+                </div>
                 <div class="btn_book">
                     <p id="price">VND 234.422</p>
                     <button id="add_to_cart">Add to cart</button>
@@ -144,7 +131,13 @@
             <img id = "book_img" src="image/books/default.jpg">
             <div class="book_info">
                 <p id="book_title">Title Lorem ipsum</p>
-                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
+                <div class="star_container">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/half-star.jpg">
+                </div>
                 <div class="btn_book">
                     <p id="price">VND 234.422</p>
                     <button id="add_to_cart">Add to cart</button>
@@ -156,7 +149,12 @@
             <img id = "book_img" src="image/books/default.jpg">
             <div class="book_info">
                 <p id="book_title">Title Lorem ipsum</p>
-                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
+                <div class="star_container">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                </div>
                 <div class="btn_book">
                     <p id="price">VND 234.422</p>
                     <button id="add_to_cart">Add to cart</button>
@@ -168,7 +166,65 @@
             <img id = "book_img" src="image/books/default.jpg">
             <div class="book_info">
                 <p id="book_title">Title Lorem ipsum</p>
-                <p id="description">Description Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem</p>
+                <div class="star_container">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/half-star.jpg">
+                </div>
+                <div class="btn_book">
+                    <p id="price">VND 234.422</p>
+                    <button id="add_to_cart">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="book_card">
+            <img id = "book_img" src="image/books/default.jpg">
+            <div class="book_info">
+                <p id="book_title">Title Lorem ipsum</p>
+                <div class="star_container">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/half-star.jpg">
+                </div>
+                <div class="btn_book">
+                    <p id="price">VND 234.422</p>
+                    <button id="add_to_cart">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="book_card">
+            <img id = "book_img" src="image/books/default.jpg">
+            <div class="book_info">
+                <p id="book_title">Title Lorem ipsum</p>
+                <div class="star_container">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/half-star.jpg">
+                </div>
+                <div class="btn_book">
+                    <p id="price">VND 234.422</p>
+                    <button id="add_to_cart">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="book_card">
+            <img id = "book_img" src="image/books/default.jpg">
+            <div class="book_info">
+                <p id="book_title">Title Lorem ipsum</p>
+                <div class="star_container">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                    <img src="./image/books/star.jpg">
+                </div>
                 <div class="btn_book">
                     <p id="price">VND 234.422</p>
                     <button id="add_to_cart">Add to cart</button>

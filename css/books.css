@@ -200,6 +200,14 @@ a, a:visited, a:hover, a:active {
     margin-bottom: 8px;
 }
 
+.star_container {
+    display: flex;
+    width: 100%;
+}
+.star_container img{
+    height: 30px;
+    width: 30px;
+}
 .book_info #price {
     font-size: 20px;
     font-weight: bold;

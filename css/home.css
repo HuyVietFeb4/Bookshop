@@ -173,7 +173,14 @@ a, a:visited, a:hover, a:active {
     cursor: pointer;
     box-shadow: 5px 10px 5px gray;
 }
-
+.star_container {
+    display: flex;
+    width: 100%;
+}
+.star_container img{
+    height: 30px;
+    width: 30px;
+}
 .book_card:hover {
     margin-top: -50px;
 }
