@@ -1,0 +1,78 @@
+/*********************************************************************** Books section ***********************************************************************/
+
+.book_list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.book_card {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 30px;
+    width: 300px;
+    transition: margin 0.2s ease-in-out;
+    cursor: pointer;
+    box-shadow: 5px 10px 5px gray;
+}
+.book_card:hover {
+    margin-top: -50px;
+}
+#book_img {
+    width: 300px;
+    height: 300px;
+}
+
+.book_info {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    padding: 10px;
+}
+
+.book_info #book_title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.book_info #description {
+    color: gray;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.star_container {
+    display: flex;
+    width: 100%;
+}
+.star_container img{
+    height: 30px;
+    width: 30px;
+}
+.book_info #price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn_book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#add_to_cart {
+    background-color: royalblue;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 16px;
+    height: 40px;
+    font-size: 16px;
+}
+

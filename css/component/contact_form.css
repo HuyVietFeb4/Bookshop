@@ -1,0 +1,81 @@
+/*********************************************************************** Form section ***********************************************************************/
+#contact_title, #contact_content {
+    text-align: center;
+}
+
+#contact_title {
+    font-size: 36px;
+    font-weight: bold;
+}
+#contact_content {
+    color: gray;
+    font-size: 16px;
+}
+
+.form_container {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.info_container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+} 
+
+.working_info {
+    display: flex;
+}
+
+.working_info img {
+    height: 30px;
+    width: 30px;
+}
+
+#working_title {
+    font-size: 24px;
+    font-weight: 700;
+}
+#working_detail {
+    font-size: 16px;
+}
+
+form {
+    margin-left: 100px;
+    width: 500px;
+}
+
+.input_info {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+.input_info input, textarea {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 100%;
+    border: 1px solid;
+    border-color: royalblue;
+}
+textarea {
+    height: 120px;
+}
+#name, #email, #subject {
+    height: 50px;
+}
+
+#btn_submit {
+    background-color: royalblue;
+    border: none;
+    color: white;
+    padding: 20px 40px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+}

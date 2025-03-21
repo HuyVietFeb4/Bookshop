@@ -38,7 +38,7 @@
         <p id="contact_content">For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!</p>
         
         <div class="form_container">
-            <div class="info_container">
+            <div class="shop_container">
                 <div class="working_info">
                     <div class="working_info_content">
                         <p id="working_title"><img src="image/contact/location.png"> Address</p>
@@ -62,7 +62,7 @@
                 </div>
             </div>
 
-            <form action="">
+            <form action="" class="contact_form">
                 <div class="input_info">
                     <label for="name">Your name</label>
                     <input type="text" id="name" placeholder="Your Name">

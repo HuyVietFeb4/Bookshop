@@ -1,0 +1,35 @@
+/*********************************************************************** Benefit section ***********************************************************************/
+.benefit_area {
+    background: #e6f0ff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 270px;
+}
+
+.benefit_content {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    margin: 10px 40px;
+}
+.benefit_content img {
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+}
+
+#benefit_title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+
+#benefit_detail {
+    font-size: 17px;
+    color: gray;
+}
+
+

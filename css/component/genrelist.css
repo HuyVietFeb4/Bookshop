@@ -1,0 +1,48 @@
+/*********************************************************************** Genres section ***********************************************************************/
+.genres {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+#genre_name {
+    font-weight: bold;
+}
+.genre_list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.genre_card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px 30px;
+    transition: margin 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.genre_card:hover {
+    margin-top: -50px;
+}
+#genre_img {
+    width: 380px;
+    height: 480px;
+}
+
+@media (max-width: 1024px) { 
+    .genre_card:hover {
+        margin-top: -10px;
+    }
+    #genre_img {
+        width: 350px;
+    }
+}
+
+@media (max-width: 375px) { 
+    #genre_img {
+        width: 300px;
+    }
+}

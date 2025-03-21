@@ -1,0 +1,128 @@
+@media (max-width: 1024px) { 
+/*********************************************************************** Header ***********************************************************************/
+    header { 
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    nav ul { 
+        flex-direction: column;
+    }
+    nav ul li {
+        margin: 20px 50px;
+    }
+    .user_area {
+        margin-top: 5px;
+    }
+/*********************************************************************** Welcome area ***********************************************************************/
+    .welcome_area { 
+        justify-content: center;
+    }
+    .welcome_content {
+        padding: 20px;
+        height: 250px;
+        width: 300px;
+        right: 0;
+    }
+    .welcome_content #welcome_title {
+        font-size: 20px;
+        width: 300px;
+        font-weight: bold;
+    }
+/*********************************************************************** Benefit section ***********************************************************************/
+    .benefit_area {
+        flex-direction: column;
+        height: 500px;
+    }
+
+    .benefit_content {
+        width: 250px;
+        margin: auto;
+    }
+    
+    #benefit_title {
+        font-size: 20px;
+    }
+    
+    #benefit_detail {
+        font-size: 15px;
+    }
+/*********************************************************************** Book section ***********************************************************************/
+    .book_card:hover {
+        margin-top: -10px;
+    }
+/*********************************************************************** Filter section ***********************************************************************/
+    .sort_form {
+        margin-top: 10px;
+        margin-right: 0;
+    }
+    .search_area {
+        margin-left: 0;
+        width: 90%;
+    }
+    #sort_by, #sort_order {
+        margin: 10px 0px;
+    }
+    .filter_area, .sort_form {
+        flex-direction: column;
+    }
+/*********************************************************************** Footer section ***********************************************************************/
+    footer p {
+        font-size: 15px;
+    }
+    .store_info {
+        flex-direction: column;
+    }
+    .store_info #or {
+        margin: 20px 30px;
+    }
+    #copyright { 
+        font-size: 20px;
+    }
+/*********************************************************************** Genre section ***********************************************************************/
+    .genre_card:hover {
+        margin-top: -10px;
+    }
+    #genre_img {
+        width: 350px;
+    }
+/*********************************************************************** Review section ***********************************************************************/
+    .customer_review p{
+        font-size: 12px;
+    }
+    .customer { 
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #customer_pfp {
+        width: 90px;
+        height: 90px;
+    }
+    .info_container{
+        margin-right: 20px;
+    }
+/*********************************************************************** Contact form section ***********************************************************************/
+
+    .form_container {
+        flex-direction: column-reverse;
+    }
+    .contact_form {
+        width: 80%;
+        margin: auto;
+    }
+
+    .shop_container {
+        width: 250px;
+        margin: auto;
+    }
+}
+
+/*********************************************************************** Genre section ***********************************************************************/
+@media (max-width: 375px) { 
+    #genre_img {
+        width: 300px;
+    }
+    .genre_card:hover, .book_card:hover {
+        margin-top: -10px;
+    }
+}
