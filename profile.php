@@ -43,6 +43,7 @@
         </div>
     </section>
 
+    <!-- Next: add navigation to pages like shopee and benefit sections -->
     <section class="modal">
         <form id="edit_profile_form">
             <div class="form_header">
