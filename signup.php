@@ -27,31 +27,31 @@
             <a href="index.php?page=signin">Sign In</a>
         </div>
     </header>
-
-    <div class="container">
-        <h2>Sign Up With</h2>
-        <div class="social-login">
-            <button class="facebook"><img id="fb_icon" src="image/social_media/facebook.svg"/>Facebook</button>
-            <button class="google"><img id="gg_icon" src="image/social_media/google.svg"/>Google</button>
+    <div class="big_container">
+        <div class="container">
+            <h2>Sign Up With</h2>
+            <div class="social-login">
+                <button class="facebook"><img id="fb_icon" src="image/social_media/facebook.svg"/>Facebook</button>
+                <button class="google"><img id="gg_icon" src="image/social_media/google.svg"/>Google</button>
+            </div>
+            <form>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div class="input-group">
+                    <label for="confirm_password">Confirm password</label>
+                    <input type="password" id="confirm_password" name="confirm_password">
+                </div>
+                <button type="submit" class="sign-in">Sign Up</button>
+            </form>
+            <p class="signup">Already have an account? <a href="index.php?page=signin">Sign in now</a></p>
         </div>
-        <form>
-            <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username">
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password">
-            </div>
-            <div class="input-group">
-                <label for="confirm_password">Confirm password</label>
-                <input type="password" id="confirm_password" name="confirm_password">
-            </div>
-            <button type="submit" class="sign-in">Sign Up</button>
-        </form>
-        <p class="signup">Already have an account? <a href="index.php?page=signin">Sign in now</a></p>
     </div>
-
     <footer>
         <div class="store_info">
             <div class="contact_info">

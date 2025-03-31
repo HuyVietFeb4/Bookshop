@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <title>Books</title>
+    <title>Book detail</title>
     <link rel="stylesheet" href="css/product.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
@@ -25,7 +25,8 @@
         </nav>
 
         <div class="user_area">
-            <a href="index.php?page=signin">Sign In</a>
+            <!-- <a href="index.php?page=signin">Sign In</a> -->
+            <a href="index.php?page=profile"><img src="image/social_media/facebook.png"></a>
         </div>
     </header>
 
@@ -63,6 +64,29 @@
                 <button id="add_to_cart_btn">Add to cart</button>
             </div>
         </div>
+    </section>
+
+    <section class="user_comment">
+        <form action="" class="user_comment_input">
+            <div class="info_container">
+                <img src="image/bookstore_logo.png" id="customer_pfp">
+                <div class="detail_info">
+                    <p id="name">Lorem, ipsum.</p>
+                </div>
+            </div>
+            <div class="comment_area">
+                <div class="star_rating">
+                    <span id="star_input" data-value="1"><img src="./image/books/grey_star.png"></span>
+                    <span id="star_input" data-value="2"><img src="./image/books/grey_star.png"></span>
+                    <span id="star_input" data-value="3"><img src="./image/books/grey_star.png"></span>
+                    <span id="star_input" data-value="4"><img src="./image/books/grey_star.png"></span>
+                    <span id="star_input" data-value="5"><img src="./image/books/grey_star.png"></span>
+                </div>
+                <textarea id="comment_input" placeholder="Type here" class="input"></textarea>
+                <input type="submit" value="Submit" id="btn_submit">
+            </div>
+           
+        </form>
     </section>
 
     <section class="related_products">
@@ -253,6 +277,7 @@
         </div>
         <p id="copyright">&copy; 2025 Huy Viet. All Rights Reserved.</p>
     </footer>
+    <script src="./js/star_rating.js"></script>
 </body>
 
 
