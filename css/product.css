@@ -74,7 +74,7 @@
     color: white;
 }
 
-.quanity_change {
+.quantity_change {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -87,7 +87,7 @@
     margin-bottom: 10px;
 }
 
-#quanity {
+#quantity {
     font-size: 24px;
     font-weight: bold;
     margin: 0 10px;
@@ -151,5 +151,11 @@
     .book_detail {
         width: 100%;
         align-items: center;
+    }
+}
+
+@media (max-width: 400px) { 
+    #book_image {
+        width: 300px;
     }
 }

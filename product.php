@@ -9,26 +9,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo_area">
-            <img id = "web_logo" src="image/bookstore_logo.png">
-            <h1 id = "web_name">MyBook</h1>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="index.php?page=home">Home</a></li>
-                <li><a href="index.php?page=books">Books</a></li>
-                <li><a href="index.php?page=genres">Genres</a></li>
-                <li><a href="index.php?page=contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <div class="user_area">
-            <!-- <a href="index.php?page=signin">Sign In</a> -->
-            <a href="index.php?page=profile"><img src="image/social_media/facebook.png"></a>
-        </div>
-    </header>
+    <?php require_once './html_component/header.php'; ?>
 
     <section class="book_detail">
         <img id = "book_image" src="image/books/default.jpg">
@@ -49,16 +30,16 @@
             <div class="condition">
                 <p>Condition</p>
                 <div id="choose_condition">
-                    <button id="chosen">New</button>
-                    <button>Used</button>
-                    <button>Digital</button>
+                    <button id="chosen" class="new_btn">New</button>
+                    <button class="used_btn">Used</button>
+                    <button class="digital_btn">Digital</button>
                 </div>
             </div>
 
             <div class="order_detail">
-                <div class="quanity_change">
+                <div class="quantity_change">
                     <button id="minus">-</button>
-                    <span id="quanity">1</span>
+                    <span id="quantity">1</span>
                     <button id="plus">+</button>
                 </div>
                 <button id="add_to_cart_btn">Add to cart</button>
@@ -260,24 +241,9 @@
         <button id="other_reviews">See 99+ other reviews</button>
     </section>
 
-    <footer>
-        <div class="store_info">
-            <div class="contact_info">
-                <h1 id = "web_name">MyBook</h1>
-                <p id = "phone_number">(828) 456-8420</p>
-                <p id = "address">60 Locust Dr Waynesville North Carolina United States</p>
-            </div>
-            <p id="or">or</p>
-            <div class="social_media">
-                <img src="image/social_media/facebook.png" alt="Facebook">
-                <img src="image/social_media/instagram.png" alt="Instagram">
-                <img src="image/social_media/tiktok.png" alt="TikTok">
-                <img src="image/social_media/twitter.png" alt="Twitter">
-            </div>
-        </div>
-        <p id="copyright">&copy; 2025 Huy Viet. All Rights Reserved.</p>
-    </footer>
+    <?php require_once './html_component/footer.php'; ?>
     <script src="./js/star_rating.js"></script>
+    <script src="./js/product_detail.js"></script>
 </body>
 
 

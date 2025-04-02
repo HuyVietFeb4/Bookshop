@@ -1,0 +1,204 @@
+@import url("component/body.css");
+/*********************************************************************** Header ***********************************************************************/
+@import url("component/header.css");
+/*********************************************************************** Welcome section ***********************************************************************/
+@import url("component/welcome.css");
+/*********************************************************************** Benefit section ***********************************************************************/
+@import url("component/benefit.css");
+/*********************************************************************** Footer section ***********************************************************************/
+@import url("component/footer.css");
+/*********************************************************************** Responsive section ***********************************************************************/
+@import url("component/responsive.css");
+
+
+.welcome_area::before {
+    background-image: url('../image/bookshelves_4.jpg');
+}
+
+.shopping_cart {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.buy_item {
+    display: flex;
+    width: 1200px;
+    flex-direction: column;
+}
+.buy_heading {
+    margin-left: 100px;
+    display: flex;
+    margin-bottom: 20px;
+    color: royalblue;
+}
+
+.buy_heading p{ 
+    width: 100px;
+    margin-left: 100px;
+    font-weight: bold;
+}
+
+.buy_info {
+    display: flex;
+}
+
+.book_info {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.book_info img {
+    height: 100px;
+    width: 100px;
+}
+
+.book_info p {
+    margin-left: 100px;
+    width: 100px;
+}
+
+#discard_btn {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+.cart_info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    width: 300px;
+    background: #e6f0ff;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 300px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.cart_info .field {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+#checkout_btn {
+    background: none;
+    border-color: royalblue;
+    color: royalblue;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+@media (max-width: 1500px) { 
+    .buy_heading p{ 
+        width: 70px;
+        margin-left: 70px;
+    }
+    .book_info p {
+        margin-left: 70px;
+        width: 70px;
+    }
+}
+
+@media (max-width: 1176px) { 
+    .buy_heading p{ 
+        width: 50px;
+        margin-left: 50px;
+    }
+    .book_info p {
+        margin-left: 50px;
+        width: 50px;
+    }
+}
+
+@media (max-width: 1000px) { 
+    .buy_heading p{ 
+        width: 30px;
+        margin-left: 30px;
+        font-size: 12px;
+    }
+    .book_info p {
+        margin-left: 30px;
+        width: 30px;
+        font-size: 12px;
+    }
+    .cart_info { 
+        margin-left: 20px;
+    }
+    .buy_item {
+        width: 500px;
+    }
+}
+
+@media (max-width: 1000px) { 
+    .buy_heading p{ 
+        width: 30px;
+        margin-left: 30px;
+        font-size: 12px;
+    }
+    .book_info p {
+        margin-left: 30px;
+        width: 30px;
+        font-size: 12px;
+    }
+    .cart_info { 
+        margin-left: 20px;
+    }
+    .buy_item {
+        width: 500px;
+    }
+}
+
+@media (max-width: 752px) { 
+    .cart_info { 
+        margin-left: 0px;
+    }
+    .shopping_cart {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .book_info img { 
+        height: 50px;
+        width: 50px;
+    }
+    .buy_item {
+        margin-right: 0px;
+    }
+
+    .buy_heading { 
+        margin-left: 0px;
+        justify-content: center;
+    }
+    .book_info{
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) { 
+    .book_info img { 
+        display: none;
+    }
+    #discard_btn {
+        display: block;
+        height: 20px;
+        width: 20px;
+        margin-left: 20px;
+    }
+    .buy_heading { 
+        margin-left: 0px;
+        margin-right: 40px;
+    }
+}

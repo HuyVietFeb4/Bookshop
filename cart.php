@@ -9,47 +9,79 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo_area">
-            <img id = "web_logo" src="image/bookstore_logo.png">
-            <h1 id = "web_name">MyBook</h1>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="index.php?page=home">Home</a></li>
-                <li><a href="index.php?page=books">Books</a></li>
-                <li><a href="index.php?page=genres">Genres</a></li>
-                <li><a href="index.php?page=contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <div class="user_area">
-            <!-- <a href="index.php?page=signin">Sign In</a> -->
-            <a href="index.php?page=profile"><img src="image/social_media/facebook.png"></a>
-            <a href="index.php?page=cart"><img src="image/social_media/facebook.png"></a>
-        </div>
-    </header>
-
+    <?php require_once './html_component/header.php'; ?>
+    <section class="welcome_area">
+        <p id="welcome_title">Cart</p>
+    </section>
     
-    <footer>
-        <div class="store_info">
-            <div class="contact_info">
-                <h1 id = "web_name">MyBook</h1>
-                <p id = "phone_number">(828) 456-8420</p>
-                <p id = "address">60 Locust Dr Waynesville North Carolina United States</p>
+    <section class="shopping_cart">
+        <div class="buy_item">
+            <div class="buy_heading">
+                <p id="name">Name</p>
+                <p id="price">Price</p>
+                <p id="quantity">Quantity</p>
+                <p id="subtotal">Subtotal</p>
+                <p id="subtotal">Condition</p>
             </div>
-            <p id="or">or</p>
-            <div class="social_media">
-                <img src="image/social_media/facebook.png" alt="Facebook">
-                <img src="image/social_media/instagram.png" alt="Instagram">
-                <img src="image/social_media/tiktok.png" alt="TikTok">
-                <img src="image/social_media/twitter.png" alt="Twitter">
+
+            <div class="book_info">
+                <img src="image/books/default.jpg">
+                <p id="name">Lorem concac</p>
+                <p id="price">VND 300.000</p>
+                <p id="quantity">2</p>
+                <p id="subtotal">VND 600.000</p>
+                <p id="condition">Used</p>
+                <img src="./image/bin.png" alt="" id="discard_btn">
+            </div>
+
+            <div class="book_info">
+                <img src="image/books/default.jpg">
+                <p id="name">Lorem concac</p>
+                <p id="price">VND 300.000</p>
+                <p id="quantity">2</p>
+                <p id="subtotal">VND 600.000</p>
+                <p id="condition">Used</p>
+                <img src="./image/bin.png" alt="" id="discard_btn">
+            </div>
+
+            <div class="book_info">
+                <img src="image/books/default.jpg">
+                <p id="name">Lorem concac</p>
+                <p id="price">VND 300.000</p>
+                <p id="quantity">2</p>
+                <p id="subtotal">VND 600.000</p>
+                <p id="condition">Used</p>
+                <img src="./image/bin.png" alt="" id="discard_btn">
+            </div>
+
+            <div class="book_info">
+                <img src="image/books/default.jpg">
+                <p id="name">Lorem concac</p>
+                <p id="price">VND 300.000</p>
+                <p id="quantity">2</p>
+                <p id="subtotal">VND 600.000</p>
+                <p id="condition">Used</p>
+                <img src="./image/bin.png" alt="" id="discard_btn">
             </div>
         </div>
-        <p id="copyright">&copy; 2025 Huy Viet. All Rights Reserved.</p>
-    </footer>
-    <script src="./js/star_rating.js"></script>
+
+        <div class="cart_info">
+            <h2>Cart Totals</h2>
+            <div class="field">
+                <p>Total:</p>
+                <p>VND 100.000.000</p>
+            </div>
+            <div class="field">
+                <p>Item count:</p>
+                <p>2</p>
+            </div>
+            <div class="button_container">
+                <button id='checkout_btn'>Check Out</button>
+            </div>
+        </div>
+    </section>
+    <?php require_once './html_component/benefit.php'; ?>
+    <?php require_once './html_component/footer.php'; ?>
 </body>
 
 
