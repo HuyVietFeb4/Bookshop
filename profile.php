@@ -54,7 +54,75 @@
     </section>
     
     <section class="user_past_activity">
+        <div class="past_order">
+            <div class="buy_heading">
+                <p id="order_id">Order</p>
+                <p id="name">Name</p>
+                <p id="price">Price</p>
+                <p id="quantity">Quantity</p>
+                <p id="subtotal">Subtotal</p>
+                <p id="condition">Condition</p>
+                <p id="date">Date</p>
+            </div>
 
+            <div class="book_info">
+                <img src="image/books/default.jpg">
+                <p id="order_id">30</p>
+                <p id="name">Lorem concac</p>
+                <p id="price">VND 300.000</p>
+                <p id="quantity">2</p>
+                <p id="subtotal">VND 600.000</p>
+                <p id="condition">Used</p>
+                <p id="date">04-02-3333</p>
+            </div>
+
+            <div class="book_info">
+                <img src="image/books/default.jpg">
+                <p id="order_id">30</p>
+                <p id="name">Lorem concac</p>
+                <p id="price">VND 300.000</p>
+                <p id="quantity">2</p>
+                <p id="subtotal">VND 600.000</p>
+                <p id="condition">Used</p>
+                <p id="date">04-02-3333</p>
+            </div>
+
+            <div class="book_info">
+                <img src="image/books/default.jpg">
+                <p id="order_id">30</p>
+                <p id="name">Lorem concac</p>
+                <p id="price">VND 300.000</p>
+                <p id="quantity">2</p>
+                <p id="subtotal">VND 600.000</p>
+                <p id="condition">Used</p>
+                <p id="date">04-02-3333</p>
+            </div>
+
+            <div class="book_info">
+                <img src="image/books/default.jpg">
+                <p id="order_id">30</p>
+                <p id="name">Lorem concac</p>
+                <p id="price">VND 300.000</p>
+                <p id="quantity">2</p>
+                <p id="subtotal">VND 600.000</p>
+                <p id="condition">Used</p>
+                <p id="date">04-02-3333</p>
+            </div>
+
+            <div class="book_info">
+                <img src="image/books/default.jpg">
+                <p id="order_id">30</p>
+                <p id="name">Lorem concac</p>
+                <p id="price">VND 300.000</p>
+                <p id="quantity">2</p>
+                <p id="subtotal">VND 600.000</p>
+                <p id="condition">Used</p>
+                <p id="date">04-02-3333</p>
+            </div>
+        </div>
+        <div class="past_comment">
+            
+        </div>
     </section>
     
     <?php require_once './html_component/footer.php'; ?>

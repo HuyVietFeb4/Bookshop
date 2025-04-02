@@ -141,6 +141,7 @@
     </section>
 
     <?php require_once './html_component/footer.php'; ?>
+    <script src="./js/like_dislike_review.js"></script>
 </body>
 
 

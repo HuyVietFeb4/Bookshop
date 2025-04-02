@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <title>Cart</title>
-    <link rel="stylesheet" href="css/Cart.css">
+    <link rel="stylesheet" href="css/cart.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
 
@@ -21,7 +21,7 @@
                 <p id="price">Price</p>
                 <p id="quantity">Quantity</p>
                 <p id="subtotal">Subtotal</p>
-                <p id="subtotal">Condition</p>
+                <p id="condition">Condition</p>
             </div>
 
             <div class="book_info">

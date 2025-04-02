@@ -143,24 +143,6 @@ h2 {
     }
 }
 
-@media (max-width: 1000px) { 
-    .buy_heading p{ 
-        width: 30px;
-        margin-left: 30px;
-        font-size: 12px;
-    }
-    .book_info p {
-        margin-left: 30px;
-        width: 30px;
-        font-size: 12px;
-    }
-    .cart_info { 
-        margin-left: 20px;
-    }
-    .buy_item {
-        width: 500px;
-    }
-}
 
 @media (max-width: 752px) { 
     .cart_info { 

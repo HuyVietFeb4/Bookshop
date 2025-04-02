@@ -95,6 +95,50 @@ input {
     border-radius: 5px;
     cursor: pointer;
 }
+/*********************************************************************** User past activity section ***********************************************************************/
+.user_past_activity {
+    margin: 20px 0;
+}
+.past_order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buy_heading {
+    display: flex;
+    margin-bottom: 20px;
+    color: royalblue;
+    margin-left: 200px;
+}
+
+.buy_heading p{ 
+    width: 100px;
+    margin-left: 100px;
+    font-weight: bold;
+}
+.buy_heading #order_id {
+    margin-left: 0;
+}
+.buy_info {
+    display: flex;
+}
+
+.book_info {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.book_info img {
+    height: 100px;
+    width: 100px;
+}
+
+.book_info p {
+    margin-left: 100px;
+    width: 100px;
+}
 
 @media (max-width: 600px) {
     input {
@@ -107,3 +151,76 @@ input {
         width: 200px;
     }
  }
+
+
+
+ @media (max-width: 1500px) { 
+    .buy_heading p{ 
+        width: 70px;
+        margin-left: 70px;
+    }
+    .book_info p {
+        margin-left: 70px;
+        width: 70px;
+    }
+    .buy_heading {
+        margin-left: 150px;
+    }
+}
+
+@media (max-width: 1176px) { 
+    .buy_heading p{ 
+        width: 50px;
+        margin-left: 50px;
+    }
+    .book_info p {
+        margin-left: 50px;
+        width: 50px;
+    }
+}
+
+@media (max-width: 800px) { 
+    .buy_heading p{ 
+        width: 30px;
+        margin-left: 30px;
+        font-size: 12px;
+    }
+    .book_info p {
+        margin-left: 30px;
+        width: 30px;
+        font-size: 12px;
+    }
+    .buy_heading {
+        margin-left: 130px;
+    }
+}
+
+
+@media (max-width: 550px) { 
+    .book_info img { 
+        display: none;
+    }
+    .buy_heading { 
+        margin-left: 0px;
+    }
+    .book_info #order_id {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 400px) { 
+    .past_order p{
+        font-size: 8px;
+    }
+    
+    .book_info p {
+        margin-left: 10px;
+    }
+
+    .buy_heading p{ 
+        margin-left: 10px;
+    }
+    .book_info #order_id {
+        margin-left: 0;
+    }
+}

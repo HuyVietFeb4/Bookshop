@@ -37,11 +37,7 @@
             </div>
 
             <div class="order_detail">
-                <div class="quantity_change">
-                    <button id="minus">-</button>
-                    <span id="quantity">1</span>
-                    <button id="plus">+</button>
-                </div>
+                <input type="number" id="quantity_change" min="1" max="100" oninput="this.value = this.value < 1 ? '' : this.value.replace(/\D/g, '');">
                 <button id="add_to_cart_btn">Add to cart</button>
             </div>
         </div>
@@ -244,6 +240,7 @@
     <?php require_once './html_component/footer.php'; ?>
     <script src="./js/star_rating.js"></script>
     <script src="./js/product_detail.js"></script>
+    <script src="./js/like_dislike_review.js"></script>
 </body>
 
 
