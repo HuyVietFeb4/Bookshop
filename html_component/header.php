@@ -1,8 +1,8 @@
 <header>
-    <div class="logo_area">
+    <a class="logo_area" href="index.php?page=home">
         <img id = "web_logo" src="image/bookstore_logo.png">
         <h1 id = "web_name">MyBook</h1>
-    </div>
+    </a>
     <nav>
         <ul>
             <li><a href="index.php?page=home">Home</a></li>

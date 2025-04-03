@@ -30,19 +30,6 @@
 
     <section class="customer_review">
         <p id="reiview_title">Customer review</p>
-        <div class="statistics">
-            <div class="total_reviews">
-
-            </div>
-
-            <div class="average_stars">
-                
-            </div>
-
-            <div class="stars_statistics">
-                
-            </div>
-        </div>
         <hr id="horizontal">
         <div class="customer">
             <div class="info_container">

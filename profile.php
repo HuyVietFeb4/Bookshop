@@ -34,7 +34,7 @@
                 <input type="file" id="profile_picture" name="profile_picture" accept=".png, .jpg, .jpeg">
             </div>
             <div class="field">
-                <label for="name">Name:</label>
+                <label for="name">Username:</label>
                 <input type="text" id="name" value="Your Name">
             </div>
             <div class="field">
@@ -42,18 +42,19 @@
                 <input type="email" id="email" value="yourname@gmail.com">
             </div>
             <div class="field">
-                <label for="mobile">Mobile Number:</label>
-                <input type="text" id="mobile" placeholder="Add number">
+                <label for="password">Password:</label>
+                <input type="password" id="password">
             </div>
             <div class="field">
-                <label for="location">Location:</label>
-                <input type="text" id="location" value="USA">
+                <label for="confirm_password">Confirm password:</label>
+                <input type="password" id="confirm_password">
             </div>
             <button type="button" id="save_changes">Save Changes</button>
         </form>
     </section>
     
     <section class="user_past_activity">
+        <h2 id="past_order_header">Past order</h2>
         <div class="past_order">
             <div class="buy_heading">
                 <p id="order_id">Order</p>
@@ -119,9 +120,80 @@
                 <p id="condition">Used</p>
                 <p id="date">04-02-3333</p>
             </div>
+            <button id="other_reviews">See 99+ other order</button>
         </div>
+
         <div class="past_comment">
-            
+            <h2 id="past_order_header">Past Comment</h2>
+            <section class="customer_review">
+                <hr id="horizontal">
+                <div class="customer">
+                    <div class="info_container">
+                        <img src="image/bookstore_logo.png" id="customer_pfp">
+                        <div class="detail_info">
+                            <p id="name">Lorem, ipsum.</p>
+                            <p id="total_spent">Total spent: 200.000 VND</p>
+                            <p id="total_review">Total review: 29</p>
+                        </div>
+                    </div>
+                    <div class="review_detail">
+                        <div class="star_container">
+                            <img src="./image/books/star.jpg">
+                            <img src="./image/books/star.jpg">
+                            <img src="./image/books/star.jpg">
+                            <img src="./image/books/star.jpg">
+                            <img src="./image/books/half-star.jpg">
+                        </div>
+                        <p id="date">29-02-2022</p>
+                        <p id="comment">lorem1000</p>
+                        <a href="index.php?page=product">On 1984</a>
+                    </div>
+                </div>
+                <div class="customer">
+                    <div class="info_container">
+                        <img src="image/bookstore_logo.png" id="customer_pfp">
+                        <div class="detail_info">
+                            <p id="name">Lorem ipsumae eveniet doloribus a odio? Maiores?</p>
+                            <p id="total_spent">Total spent: 200.000 VND</p>
+                            <p id="total_review">Total review: 29</p>
+                        </div>
+
+                    </div>
+                    <div class="review_detail">
+                        <div class="star_container">
+                            <img src="./image/books/star.jpg">
+                            <img src="./image/books/star.jpg">
+                            <img src="./image/books/star.jpg">
+                            <img src="./image/books/half-star.jpg">
+                        </div>
+                        <p id="date">29-02-2022</p>
+                        <p id="comment">Lorem ipsum dolornihil molestiae rerum necessitatibus blanditiis ratione deleniti repellat, quas provident exercitationem praesentium, ducimus error quasi odit.</p>
+                        <a href="index.php?page=product">On 1984</a>
+                    </div>
+                </div>
+                <div class="customer">
+                    <div class="info_container">
+                        <img src="image/bookstore_logo.png" id="customer_pfp">
+                        <div class="detail_info">
+                            <p id="name">Lorem, ipsum.</p>
+                            <p id="total_spent">Total spent: 200.000 VND</p>
+                            <p id="total_review">Total review: 29</p>
+                        </div>
+                    </div>
+                    <div class="review_detail">
+                        <div class="star_container">
+                            <img src="./image/books/star.jpg">
+                            <img src="./image/books/star.jpg">
+                            <img src="./image/books/star.jpg">
+                            <img src="./image/books/half-star.jpg">
+                        </div>
+                        <p id="date">29-02-2022</p>
+                        <p id="comment">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia alias asperiores nostrum unde cupiditate, atque perferendis delectus sit necessitatibus commodi repudiandae nemo, doloremque qui laudantium rem perspiciatis inventore similique optio.</p>
+                        <a href="index.php?page=product">On 1984</a>
+                    </div>
+                </div>
+                <button id="other_reviews">See 99+ other reviews</button>
+            </section>
         </div>
     </section>
     

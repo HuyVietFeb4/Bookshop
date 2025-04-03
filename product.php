@@ -39,10 +39,40 @@
             <div class="order_detail">
                 <input type="number" id="quantity_change" min="1" max="100" oninput="this.value = this.value < 1 ? '' : this.value.replace(/\D/g, '');">
                 <button id="add_to_cart_btn">Add to cart</button>
+                <button id="edit_book_button">Edit Book</button>
             </div>
         </div>
     </section>
-
+    
+    <section class="admin_action">
+        <form id="edit_book_form">
+            <div class="form_header">
+                <h2>Edit Book Detail</h2>
+                <image id="pop_out_btn" src="./image/x-mark.png"></image>
+            </div>
+            <div class="field">
+                <label for="book_cover">Change Book Cover:</label>
+                <input type="file" id="book_cover" name="book_cover" accept=".png, .jpg, .jpeg">
+            </div>
+            <div class="field">
+                <label for="book_name">Book Name:</label>
+                <input type="text" id="book_name" value="Lorem ipsum dolor sit amet.">
+            </div>
+            <div class="field">
+                <label for="book_price">Price:</label>
+                <input type="email" id="book_price" value="300.000">
+            </div>
+            <div class="field">
+                <label for="book_genre">Book Genre:</label>
+                <input type="text" id="book_genre" placeholder="Lorem, ipsum">
+            </div>
+            <div class="field">
+                <label for="book_description">Description:</label>
+                <textarea id="book_description" class="input">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, illo repellendus! Dicta fugit labore incidunt nam sed assumenda, alias quae.</textarea>
+            </div>
+            <button type="button" id="save_changes">Save Changes</button>
+        </form>
+    </section>
     <section class="user_comment">
         <form action="" class="user_comment_input">
             <div class="info_container">
@@ -241,6 +271,7 @@
     <script src="./js/star_rating.js"></script>
     <script src="./js/product_detail.js"></script>
     <script src="./js/like_dislike_review.js"></script>
+    <script src="./js/admin_edit.js"></script>
 </body>
 
 

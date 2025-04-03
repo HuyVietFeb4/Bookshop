@@ -1,0 +1,8 @@
+DROP TABLE Contact;
+DROP TABLE Author;
+DROP TABLE Review;
+DROP TABLE Writes;
+DROP TABLE Order_item;
+DROP TABLE Book;
+DROP TABLE Orders;
+DROP TABLE Users;
