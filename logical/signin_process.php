@@ -33,8 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $connection->close();
                 echo '<script>setTimeout(function(){ window.location.href = "http://localhost/Real-web-lab/index.php?page=home"; }, 4000);</script>';
             } else {
-                echo $token . "<br>";
-                echo $row["Passwords"] . "<br>";
                 echo "Wrong email/password, try again.";
                 $connection->close();
                 echo '<script>setTimeout(function(){ window.location.href = "http://localhost/Real-web-lab/index.php?page=signin"; }, 4000);</script>';
