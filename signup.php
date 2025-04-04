@@ -1,3 +1,9 @@
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +22,11 @@
                 <button class="facebook"><img id="fb_icon" src="image/social_media/facebook.svg"/>Facebook</button>
                 <button class="google"><img id="gg_icon" src="image/social_media/google.svg"/>Google</button>
             </div>
-            <form>
+            <form action="./logical/signup_process.php" method="post">
                 <div class="input-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email">
+                    <div id="emailError" class="error-message"></div>
                 </div>
                 <div class="input-group">
                     <label for="username">Username</label>
@@ -39,5 +46,7 @@
         </div>
     </div>
     <?php require_once './html_component/footer.php'; ?>
+    <script src="./js/validate_password.js"></script>
+    <script src="./js/validate_email.js"></script>
 </body>
 </html>
