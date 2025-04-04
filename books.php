@@ -20,6 +20,7 @@
         <div class="search_area">
             <input type="text" id="search_bar" placeholder="Search something...">
             <button id="search_button"><img src="image/search.png"></button>
+            <button id="add_book_btn">Add book</button>
         </div>
 
         <form class="sort_form">
@@ -38,6 +39,36 @@
             <input id ="confirm_sort" type="submit" value="Sort"/>
         </form>
         
+    </section>
+
+    <section class="add_book">
+        <form id="add_book_form">
+            <div class="form_header">
+                <h2>Add Book Detail</h2>
+                <image id="pop_out_btn" src="./image/x-mark.png"></image>
+            </div>
+            <div class="field">
+                <label for="book_cover">Book Cover:</label>
+                <input type="file" id="book_cover" name="book_cover" accept=".png, .jpg, .jpeg">
+            </div>
+            <div class="field">
+                <label for="book_name">Book Name:</label>
+                <input type="text" id="book_name">
+            </div>
+            <div class="field">
+                <label for="book_price">Price:</label>
+                <input type="email" id="book_price">
+            </div>
+            <div class="field">
+                <label for="book_genre">Book Genre:</label>
+                <input type="text" id="book_genre">
+            </div>
+            <div class="field">
+                <label for="book_description">Description:</label>
+                <textarea id="book_description" class="input"></textarea>
+            </div>
+            <button type="button" id="save_changes">Save Changes</button>
+        </form>
     </section>
 
     <section class="book_list">
@@ -226,7 +257,7 @@
 
     <?php require_once './html_component/benefit.php'; ?>
     <?php require_once './html_component/footer.php'; ?>
-
+    <script src="./js/add_book.js"></script>
 </body>
 
 

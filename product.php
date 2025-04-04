@@ -40,6 +40,7 @@
                 <input type="number" id="quantity_change" min="1" max="100" oninput="this.value = this.value < 1 ? '' : this.value.replace(/\D/g, '');">
                 <button id="add_to_cart_btn">Add to cart</button>
                 <button id="edit_book_button">Edit Book</button>
+                <button id="delete_book_button">Delete Book</button>
             </div>
         </div>
     </section>

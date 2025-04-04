@@ -107,7 +107,7 @@
     font-size: 16px;
 }
 /*********************************************************************** Admin change section ***********************************************************************/
-#edit_book_button {
+#edit_book_button, #delete_book_button {
     background-color: tomato;
     border: none;
     color: white;
