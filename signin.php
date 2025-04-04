@@ -18,8 +18,8 @@
             </div>
             <form>
                 <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
                 </div>
                 <div class="input-group">
                     <label for="password">Password</label>

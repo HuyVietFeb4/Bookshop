@@ -54,3 +54,17 @@ a, a:visited, a:hover, a:active {
 .user_area #cart {
     margin-right: 30px;
 }
+
+#log_out_btn {
+    background-color: tomato;
+    border: none;
+    color: white;
+    padding: 10px 31px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 40px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 5px;
+}

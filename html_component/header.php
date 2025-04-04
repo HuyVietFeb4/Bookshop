@@ -15,5 +15,6 @@
         <!-- <a href="index.php?page=signin">Sign In</a> -->
         <a href="index.php?page=cart" id="cart"><img src="image/shopping-cart.png"></a>
         <a href="index.php?page=profile" id="profile"><img src="image/social_media/facebook.png"></a>
+        <button id="log_out_btn">Log Out</button>
     </div>
 </header>
