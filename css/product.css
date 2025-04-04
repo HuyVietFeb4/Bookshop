@@ -200,8 +200,6 @@ textarea {
     }
     .book_detail {
         flex-direction: column;
-    }
-    .book_detail {
         width: 100%;
         align-items: center;
     }

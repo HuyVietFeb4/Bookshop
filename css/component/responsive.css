@@ -134,7 +134,7 @@
 }
 /*********************************************************************** User comment section ***********************************************************************/
 
-@media (max-width: 500px) { 
+@media (max-width: 600px) { 
     .user_comment_input {
         flex-direction: column;
     }

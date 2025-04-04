@@ -6,3 +6,4 @@ DROP TABLE Order_item;
 DROP TABLE Book;
 DROP TABLE Orders;
 DROP TABLE Users;
+DROP TABLE Admins
