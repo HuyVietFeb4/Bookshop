@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["Email"] = $email;
                 $_SESSION["Passwords"] = $token;
                 $_SESSION["Admin_name"] = $admin["Admin_name"];
-                $_SESSION["Users_ID"] = $admin["Users_ID"];
+                $_SESSION["Admins_ID"] = $admin["Admins_ID"];
                 $_SESSION["PFP_URL"] = $admin["PFP_URL"];
                 $_SESSION["is_logged_in"] = true;
                 $_SESSION["is_admin"] = true;

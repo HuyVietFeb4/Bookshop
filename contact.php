@@ -50,21 +50,47 @@
                 </div>
             </div>
 
-            <form action="" class="contact_form">
+            <form action="./logical/contact_process.php" class="contact_form" method="POST">
                 <div class="input_info">
-                    <label for="name">Your name</label>
-                    <input type="text" id="name" placeholder="Your Name">
+                    <?php 
+                        if(isset($_SESSION["is_logged_in"])) {
+                            $name_value = "";
+                            $email_value = "";
+                            if($_SESSION["is_admin"]) {
+                                $name_value = $_SESSION["Admin_name"];
+                                $email_value = $_SESSION["Email"];
+                            }
+                            else {
+                                $name_value = $_SESSION["User_name"];
+                                $email_value = $_SESSION["Email"];
+                            }
+                            echo '<label for="name">Your name</label>';
+                            echo '<input type="text" name="name" id="name" value="' . $name_value . '">';
 
-                    <label for="email">Email address</label>
-                    <input type="email" id="email" placeholder="example@gmail.com">
+                            echo '<label for="email">Email address</label>';
+                            echo '<input type="text" name="email" id="email" value="' . $email_value . '">';
 
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" placeholder="subject">
+                            echo '<label for="subject">Subject</label>';
+                            echo '<input type="text" name="subject" id="subject" placeholder="subject">';
 
-                    <label for="message">Message</label>
-                    <textarea id="message" placeholder="Type here" class="input"></textarea>
+                            echo '<label for="message">Message</label>';
+                            echo '<textarea id="message" name="message" placeholder="Type here" class="input"></textarea>';
+                        }
+                        else {
+                            echo '<label for="name">Your name</label>';
+                            echo '<input type="text" name="name" id="name" placeholder="Your Name">';
+
+                            echo '<label for="email">Email address</label>';
+                            echo '<input type="email" name="email" id="email" placeholder="example@gmail.com">';
+
+                            echo '<label for="subject">Subject</label>';
+                            echo '<input type="text" name="subject" id="subject" placeholder="subject">';
+
+                            echo '<label for="message">Message</label>';
+                            echo '<textarea id="message" name="message" placeholder="Type here" class="input"></textarea>';
+                        }
+                    ?>
                 </div>
-
                 <input type="submit" value="Submit" id="btn_submit">
             </form>
         </div>
