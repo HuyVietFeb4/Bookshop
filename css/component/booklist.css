@@ -36,7 +36,7 @@
     text-align: center;
 }
 .book_info #book_title {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     margin-bottom: 8px;
     cursor: pointer;
@@ -50,6 +50,7 @@
 
 .star_container {
     display: flex;
+    justify-content: center;
     width: 100%;
 }
 .star_container img{

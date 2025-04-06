@@ -23,9 +23,15 @@
             <img id="profile_pic" src="image/default_profile.png" alt="Profile Picture">
             <div class="profile_info">
                 <?php 
-                    echo '<p id="profile_name">' . $_SESSION["User_name"] . '</p>';
-                    echo '<p id="profile_email">' . $_SESSION["Email"] . '</p>';
-                    echo '<p id="money_spent">Money spent: USD ' . $_SESSION["Money_spent"] . '</p>';
+                    if (!$_SESSION["is_admin"]) {
+                        echo '<p id="profile_name">' . $_SESSION["User_name"] . '</p>';
+                        echo '<p id="profile_email">' . $_SESSION["Email"] . '</p>';
+                        echo '<p id="money_spent">Money spent: USD ' . $_SESSION["Money_spent"] . '</p>';
+                    }
+                    else {
+                        echo '<p id="profile_name">' . $_SESSION["Admin_name"] . '</p>';
+                        echo '<p id="profile_email">' . $_SESSION["Email"] . '</p>';
+                    }
                 ?>
             </div>
             <button id="edit_button">Edit Profile</button>

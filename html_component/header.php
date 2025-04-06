@@ -21,9 +21,16 @@ if(!isset($_SESSION))
         <?php 
             if(isset($_SESSION["is_logged_in"]) and $_SESSION["is_logged_in"] == true) 
             { 
-                echo '<a href="index.php?page=cart" id="cart"><img src="image/shopping-cart.png"></a>';
-                echo '<a href="index.php?page=profile" id="profile"><img src="image/social_media/facebook.png"></a>';
-                echo '<form method="POST" action="./logical/logout.php"> <button id="log_out_btn" type="submit">Log Out</button> </form>';
+                if(!$_SESSION["is_admin"]) {
+                    echo '<a href="index.php?page=cart" id="cart"><img src="image/shopping-cart.png"></a>';
+                    echo '<a href="index.php?page=profile" id="profile"><img src="image/' . $_SESSION["PFP_URL"] . '"></a>';
+                    echo '<form method="POST" action="./logical/logout.php"> <button id="log_out_btn" type="submit">Log Out</button> </form>';
+                }
+                else {
+                    echo '<a href="index.php?page=profile" id="profile"><img src="image/' . $_SESSION["PFP_URL"] . '"></a>';
+                    echo '<form method="POST" action="./logical/logout.php"> <button id="log_out_btn" type="submit">Log Out</button> </form>';
+                }
+                
             } 
             else {
                 echo '<a href="index.php?page=signin">Sign In</a>';

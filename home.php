@@ -33,20 +33,18 @@
         
         <div class="genre_list">
             
-            <div class="genre_card">
-                <img id = "genre_img" src="image/books/default.jpg">
-                <p id="genre_name">Something</p>
-            </div>
-
-            <div class="genre_card">
-                <img id = "genre_img" src="image/books/default.jpg">
-                <p id="genre_name">Something</p>
-            </div>
-
-            <div class="genre_card">
-                <img id = "genre_img" src="image/books/default.jpg">
-                <p id="genre_name">Something</p>
-            </div>
+            <?php 
+            $genre_query = 'SELECT DISTINCT Genre FROM Book ORDER BY RAND() LIMIT 4;';
+            $genres = $connection->query($genre_query);
+            if($genres->num_rows > 0) {
+                while($genre = $genres->fetch_assoc()) {
+                    echo '<div class="genre_card">';
+                        echo '<img id = "genre_img" src="image/books/default.jpg">';
+                        echo '<p id="genre_name">' . $genre["Genre"] . '</p>';
+                    echo '</div>';
+                }
+            }
+            ?>
         </div>
         <div class="btn_explore_more">
             <button id="explore_more">Explore more</button>
@@ -97,6 +95,10 @@
                     echo '</div>'; 
                 }
             }
+            else {
+                echo 'No more pages TT';
+            }
+            $connection->close();
         ?>
         </div>
 

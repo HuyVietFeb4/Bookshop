@@ -199,3 +199,6 @@ INSERT INTO Books (title, descriptions, price, genre, image_link) VALUES
     ('Clockwork Angel', 'A captivating fantasy set in Victorian London.', 17.25, 'Fantasy', 'clockwork_angel.jpg'),
     ('The Alice Network', 'A thrilling story of female spies during the World Wars.', 16.50, 'Historical Fiction', 'alice_network.jpg'),
     ('We Begin at the End', 'A deeply moving tale of love, loss, and redemption.', 18.75, 'Fiction', 'we_begin_at_the_end.jpg');
+
+INSERT INTO Admins (Email, Admin_name, Passwords, PFP_URL) VALUES
+    ('viet.nguyenlodaunv1@hcmut.edu.vn', 'Huy Viet', 'a4e50c71a7ded5e161e06ef761ee1bc9', 'default_profile.png');

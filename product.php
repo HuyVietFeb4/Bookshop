@@ -3,6 +3,7 @@
     { 
         session_start(); 
     } 
+    require_once './logical/database_connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,37 +19,80 @@
     <?php require_once './html_component/header.php'; ?>
 
     <section class="book_detail">
-        <img id = "book_image" src="image/books/default.jpg">
-        <div class="detail">
-            <p id="title">Lorem ipsum dolor sit amet.</p>
-            <p>VND <a id="price_detail">300.000</a></p>
-            <p>By <a id="author">WHO</a></p>
-            <div class="stars_container">
-                <img src="./image/books/star.jpg">
-                <img src="./image/books/star.jpg">
-                <img src="./image/books/star.jpg">
-                <img src="./image/books/star.jpg">
-                <img src="./image/books/half-star.jpg">
-            </div>
-            <p id="genre">Genres: Lorem, ipsum.</p>
-            <p id="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, illo repellendus! Dicta fugit labore incidunt nam sed assumenda, alias quae.</p>
+        <?php 
+            if(isset($_GET["Book_ID"])) {
+                $Book_ID = $_GET["Book_ID"];
+                if ($Book_ID < 0) {
+                    header("Location: http://localhost/Real-web-lab/index.php?page=books");
+                }
+                $book_query = 'SELECT * FROM Book WHERE Book_ID=' . $Book_ID;
+                $book_row = $connection->query($book_query);
+                if ($book_row->num_rows == 1) { 
+                    $book = $book_row->fetch_assoc();
+                    $image_src = 'image/books/'. $book["Image_URL"];
+                    if(!file_exists($image_src)) {
+                        $image_src = 'image/books/default.jpg';
+                    }
+                    echo '<img id = "book_image" src="'. $image_src .'">';
+                    echo '<div class="detail">';
+                        echo '<p id="title">' . $book['Title'] . '</p>';
+                        echo '<p>USD <a id="price_detail">' . $book['Price'] .'</a></p>';
+                        $author_query = 'SELECT a.Author_name FROM Author a JOIN Writes w ON a.Author_ID = w.Author_ID WHERE w.Book_ID =' . $Book_ID;
+                        $author_row = $connection->query($author_query);
+                        if ($author_row->num_rows > 0) { 
+                            $author_names = "";
+                            $counter = 0; // Initialize a counter
+                            while ($author = $author_row->fetch_assoc()) {
+                                $counter++; // Increment the counter
+                                $author_names .= $author["Author_name"]; // Append the author name
+                                if ($counter < $author_row->num_rows) { // Check if it's not the last row
+                                    $author_names .= ", "; // Add a comma
+                                }
+                            }
+                        echo '<p>By <a id="author">' . $author_names . '</a></p>';
+                        }
+                        echo '<p id="genre">Genres: ' . $book["Genre"] . '</p>';
+                        echo '<p id="description">Descriptions: ' . $book["Descriptions"] . '</p>';
 
-            <div class="condition">
-                <p>Condition</p>
-                <div id="choose_condition">
-                    <button id="chosen" class="new_btn">New</button>
-                    <button class="used_btn">Used</button>
-                    <button class="digital_btn">Digital</button>
-                </div>
-            </div>
+                        
+                        echo '<div class="condition">';
+                            echo '<p>Condition</p>';
+                            echo '<div id="choose_condition">';
+                                echo '<button id="chosen" class="new_btn">New</button>';
+                                echo '<button class="used_btn">Used</button>';
+                                echo '<button class="digital_btn">Digital</button>';
+                            echo '</div>';
+                        echo '</div>';
 
-            <div class="order_detail">
-                <input type="number" id="quantity_change" min="1" max="100" oninput="this.value = this.value < 1 ? '' : this.value.replace(/\D/g, '');">
-                <button id="add_to_cart_btn">Add to cart</button>
-                <!-- <button id="edit_book_button">Edit Book</button>
-                <button id="delete_book_button">Delete Book</button> -->
-            </div>
-        </div>
+                        
+                        if(!isset($_SESSION["is_logged_in"])) {
+                            echo '<form class="order_detail" action="./signin.php" method="GET">';
+                                echo '<input type="number" id="quantity_change" min="1" max="100" oninput="this.value = this.value < 1 ? \'\' : this.value.replace(/\\D/g, \'\');">';
+                                echo '<button type="submit" id="add_to_cart_btn">Add to cart</button>';
+                            echo '</form>';
+                        }
+                        else {
+                            if(!$_SESSION["is_admin"]) {
+                                echo '<form class="order_detail" action="" method="POST">';
+                                    echo '<input type="number" id="quantity_change" min="1" max="100" oninput="this.value = this.value < 1 ? \'\' : this.value.replace(/\\D/g, \'\');">';
+                                    echo '<button type="submit" id="add_to_cart_btn">Add to cart</button>';
+                                echo '</form>';
+                            }
+                            else {
+                                echo '<form class="order_detail" action="" method="POST">';
+                                    echo '<button id="edit_book_button">Edit Book</button>';
+                                    echo '<button id="delete_book_button">Delete Book</button>';
+                                echo '</form>';
+                            }
+                        }
+                    echo '</div>';
+                }
+                else {
+                    echo 'No such books in our library :(';
+                }
+                
+            }
+        ?>
     </section>
     
     <section class="admin_action">
