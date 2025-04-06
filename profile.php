@@ -22,8 +22,11 @@
         <div class="profile_header">
             <img id="profile_pic" src="image/default_profile.png" alt="Profile Picture">
             <div class="profile_info">
-                <p id="profile_name">Your Name</p>
-                <p id="profile_email">yourname@gmail.com</p>
+                <?php 
+                    echo '<p id="profile_name">' . $_SESSION["User_name"] . '</p>';
+                    echo '<p id="profile_email">' . $_SESSION["Email"] . '</p>';
+                    echo '<p id="money_spent">Money spent: USD ' . $_SESSION["Money_spent"] . '</p>';
+                ?>
             </div>
             <button id="edit_button">Edit Profile</button>
         </div>

@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result->num_rows > 0) {
             echo "Email is already registered. Please use another email or sign in with this email.";
-            echo '<script>setTimeout(function(){ window.location.href = "http://localhost/Real-web-lab/index.php?page=signup"; }, 4000);</script>';
+            header("Location: http://localhost/Real-web-lab/index.php?page=signun");
             $connection->close();
             exit();
         } else {
@@ -30,12 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             add_user($connection, $email, $username, $token);
             echo "Sign up successfully, redirect to sign in page...";
             $connection->close();
-            echo '<script>setTimeout(function(){ window.location.href = "http://localhost/Real-web-lab/index.php?page=signin"; }, 4000);</script>';
+            header("Location: http://localhost/Real-web-lab/index.php?page=signin");
         }
     }
     else {
         echo "Invalid input, try again";
         $connection->close();
-        echo '<script>setTimeout(function(){ window.location.href = "http://localhost/Real-web-lab/index.php?page=signup"; }, 4000);</script>';
+        header("Location: http://localhost/Real-web-lab/index.php?page=signup");
     }
 }

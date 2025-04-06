@@ -31,21 +31,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["is_logged_in"] = true;
                 echo "Sign in successfully";
                 $connection->close();
-                echo '<script>setTimeout(function(){ window.location.href = "http://localhost/Real-web-lab/index.php?page=home"; }, 4000);</script>';
+                header("Location: http://localhost/Real-web-lab/index.php?page=home");
             } else {
                 echo "Wrong email/password, try again.";
                 $connection->close();
-                echo '<script>setTimeout(function(){ window.location.href = "http://localhost/Real-web-lab/index.php?page=signin"; }, 4000);</script>';
+                header("Location: http://localhost/Real-web-lab/index.php?page=signin");
             }
         } else {
             echo "Could not find your account, try again";
             $connection->close();
-            echo '<script>setTimeout(function(){ window.location.href = "http://localhost/Real-web-lab/index.php?page=signin"; }, 4000);</script>';
+            header("Location: http://localhost/Real-web-lab/index.php?page=signin");
         }
     }
     else {
         echo "Invalid input, try again";
         $connection->close();
-        echo '<script>setTimeout(function(){ window.location.href = "http://localhost/Real-web-lab/index.php?page=signup"; }, 4000);</script>';
+        header("Location: http://localhost/Real-web-lab/index.php?page=signin");
     }
 }

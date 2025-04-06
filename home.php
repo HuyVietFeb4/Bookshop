@@ -16,7 +16,7 @@
 
 <body>
     <?php require_once './html_component/header.php'; ?>
-
+    <?php require_once "./logical/database_connect.php";?>
     <section class="welcome_area">
         <div class="welcome_content">
             <p id="welcome_title">Finding a book to read? You are in the right place!</p>
@@ -32,11 +32,7 @@
         </div>
         
         <div class="genre_list">
-            <div class="genre_card">
-                <img id = "genre_img" src="image/books/default.jpg">
-                <p id="genre_name">Something</p>
-            </div>
-
+            
             <div class="genre_card">
                 <img id = "genre_img" src="image/books/default.jpg">
                 <p id="genre_name">Something</p>
@@ -63,93 +59,45 @@
             <p id="title">Newly Arrive Books</p>            
             <p id="content">Discover our newly arrive books from all around the world!</p>
         </div>
+        
         <div class="book_list">
-        <div class="book_card">
-            <img id = "book_img" src="image/books/default.jpg">
-            <div class="book_info">
-                <p id="book_title">Title Lorem ipsum</p>
-                <div class="star_container">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                </div>
-                <div class="btn_book">
-                    <p id="price">VND 234.422</p>
-                    <button id="add_to_cart">Add to cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="book_card">
-            <img id = "book_img" src="image/books/default.jpg">
-            <div class="book_info">
-                <p id="book_title">Title Lorem ipsum</p>
-                <div class="star_container">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                </div>
-                <div class="btn_book">
-                    <p id="price">VND 234.422</p>
-                    <button id="add_to_cart">Add to cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="book_card">
-            <img id = "book_img" src="image/books/default.jpg">
-            <div class="book_info">
-                <p id="book_title">Title Lorem ipsum</p>
-                <div class="star_container">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/half-star.jpg">
-                </div>
-                <div class="btn_book">
-                    <p id="price">VND 234.422</p>
-                    <button id="add_to_cart">Add to cart</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="book_card">
-            <img id = "book_img" src="image/books/default.jpg">
-            <div class="book_info">
-                <p id="book_title">Title Lorem ipsum</p>
-                <div class="star_container">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/half-star.jpg">
-                </div>
-                <div class="btn_book">
-                    <p id="price">VND 234.422</p>
-                    <button id="add_to_cart">Add to cart</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="book_card">
-            <img id = "book_img" src="image/books/default.jpg">
-            <div class="book_info">
-                <p id="book_title">Title Lorem ipsum</p>
-                <div class="star_container">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/star.jpg">
-                    <img src="./image/books/half-star.jpg">
-                </div>
-                <div class="btn_book">
-                    <p id="price">VND 234.422</p>
-                    <button id="add_to_cart">Add to cart</button>
-                </div>
-            </div>
-        </div>
+        <?php 
+            $n_new_books_query = "SELECT * FROM Book ORDER BY Book_ID DESC LIMIT 5;";
+            $n_new_books = $connection->query($n_new_books_query);
+            if ($n_new_books->num_rows > 0) {
+                while($book = $n_new_books->fetch_assoc()) {
+                    $image_src = 'image/books/'. $book["Image_URL"];
+                    if(!file_exists($image_src)) {
+                        $image_src = 'image/books/default.jpg';
+                    }
+                    echo '<div class="book_card">';
+                        echo '<img id = "book_img" src="'. $image_src .'">';
+                        echo '<div class="book_info">';
+                            echo '<p id="book_title">' . $book["Title"] . '</p>';
+                            echo '<div class="star_container">';
+                                $stars_query = 'SELECT r.Stars FROM Review r JOIN Order_item oi ON r.Review_ID = oi.Review_ID WHERE oi.Book_ID = ' . $book["Book_ID"];
+                                $stars_row = $connection->query($stars_query);
+                                if ($stars_row->num_rows > 0) {
+                                    $star_sum = 0;
+                                    while($star_num = $stars_row->fetch_assoc()) {
+                                        $star_sum += $star_num["Stars"];
+                                    }
+                                    $num_of_star = ceil($star_sum / $stars_row->num_rows);
+                                    $num_of_star = $num_of_star > 5 ? 5 : $num_of_star;
+                                    for ($i = 0; $i <= num_of_star; $i++) {
+                                        echo '<img src="./image/books/star.jpg">';
+                                    } 
+                                }
+                            echo '</div>';
+                            echo '<div class="btn_book">';
+                                echo '<p id="price">USD ' . $book["Price"] . '</p>';
+                                echo '<button id="add_to_cart">Add to cart</button>';
+                            echo '</div>'; 
+                        echo '</div>'; 
+                    echo '</div>'; 
+                }
+            }
+        ?>
         </div>
 
         <div class="btn_explore_more">
