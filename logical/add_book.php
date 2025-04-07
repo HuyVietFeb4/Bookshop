@@ -23,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate file type and set file extension
     $ext = "";
     switch ($_FILES["book_cover"]["type"]) {
-        case 'image/jpeg': $ext = 'jpg'; break;
-        case 'image/jpg': $ext = 'jpg'; break;
-        case 'image/png': $ext = 'png'; break;
+        case 'image/jpeg': $ext = '.jpg'; break;
+        case 'image/jpg': $ext = '.jpg'; break;
+        case 'image/png': $ext = '.png'; break;
         default: $ext = ""; break;
     }
 

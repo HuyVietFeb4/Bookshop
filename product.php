@@ -21,6 +21,7 @@
     <section class="book_detail">
         <?php 
             if(isset($_GET["Book_ID"]) && filter_var($_GET['Book_ID'], FILTER_VALIDATE_INT)) {
+                $_SESSION["Action_book_id"] = $_GET["Book_ID"];
                 $Book_ID = $_GET["Book_ID"];
                 $book_query = 'SELECT * FROM Book WHERE Book_ID=' . $Book_ID;
                 $book_row = $connection->query($book_query);
@@ -34,20 +35,6 @@
                     echo '<div class="detail">';
                         echo '<p id="title">' . $book['Title'] . '</p>';
                         echo '<p>USD <a id="price_detail">' . $book['Price'] .'</a></p>';
-                        $author_query = 'SELECT a.Author_name FROM Author a JOIN Writes w ON a.Author_ID = w.Author_ID WHERE w.Book_ID =' . $Book_ID;
-                        $author_row = $connection->query($author_query);
-                        if ($author_row->num_rows > 0) { 
-                            $author_names = "";
-                            $counter = 0; // Initialize a counter
-                            while ($author = $author_row->fetch_assoc()) {
-                                $counter++; // Increment the counter
-                                $author_names .= $author["Author_name"]; // Append the author name
-                                if ($counter < $author_row->num_rows) { // Check if it's not the last row
-                                    $author_names .= ", "; // Add a comma
-                                }
-                            }
-                        echo '<p>By <a id="author">' . $author_names . '</a></p>';
-                        }
                         echo '<p id="genre">Genres: ' . $book["Genre"] . '</p>';
                         echo '<p id="description">Descriptions: ' . $book["Descriptions"] . '</p>';
                         
@@ -76,7 +63,9 @@
                             else {
                                 echo '<div class="order_detail">';
                                     echo '<button id="edit_book_button">Edit Book</button>';
-                                    echo '<button id="delete_book_button">Delete Book</button>';
+                                    echo '<form id="edit_book_form" method="POST" action="./logical/delete_book.php" enctype="multipart/form-data">';
+                                        echo '<button id="delete_book_button" type="submit">Delete Book</button>';
+                                    echo '</form>';
                                 echo '</div>';
                             }
                         }
@@ -90,9 +79,31 @@
             }
         ?>
     </section>
-    
+    <?php 
+        if(isset($_GET["Book_ID"]) && filter_var($_GET['Book_ID'], FILTER_VALIDATE_INT)) {
+            $Book_ID = $_GET["Book_ID"];
+            // Fetch the book details from the database
+            $book_query = "SELECT * FROM Book WHERE Book_ID = ?";
+            $stmt = $connection->prepare($book_query);
+            $stmt->bind_param("i", $Book_ID);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            // Check if the book exists
+            if ($result->num_rows > 0) {
+                $book = $result->fetch_assoc();
+                $book_name = htmlspecialchars($book['Title']);
+                $book_price = htmlspecialchars($book['Price']);
+                $book_genre = htmlspecialchars($book['Genre']);
+                $book_description = htmlspecialchars($book['Descriptions']);
+                $book_cover = htmlspecialchars($book['Image_URL']);
+            } else {
+                echo "<p>Book not found.</p>";
+                exit;
+            }
+        }
+    ?>
     <section class="admin_action">
-        <form id="edit_book_form">
+        <form id="edit_book_form" method="POST" action="./logical/edit_book.php" enctype="multipart/form-data">
             <div class="form_header">
                 <h2>Edit Book Detail</h2>
                 <image id="pop_out_btn" src="./image/x-mark.png"></image>
@@ -100,24 +111,25 @@
             <div class="field">
                 <label for="book_cover">Change Book Cover:</label>
                 <input type="file" id="book_cover" name="book_cover" accept=".png, .jpg, .jpeg">
+                <p>Current cover: <img src="./image/books/<?php echo $book_cover; ?>" alt="Book Cover" style="max-width: 150px; height: auto;"></p>
             </div>
             <div class="field">
                 <label for="book_name">Book Name:</label>
-                <input type="text" id="book_name" value="Lorem ipsum dolor sit amet.">
+                <input type="text" id="book_name" name="book_name" value="<?php echo $book_name; ?>">
             </div>
             <div class="field">
                 <label for="book_price">Price:</label>
-                <input type="email" id="book_price" value="300.000">
+                <input type="text" id="book_price" name="book_price" value="<?php echo $book_price; ?>">
             </div>
             <div class="field">
                 <label for="book_genre">Book Genre:</label>
-                <input type="text" id="book_genre" placeholder="Lorem, ipsum">
+                <input type="text" id="book_genre" name="book_genre" value="<?php echo $book_genre; ?>">
             </div>
             <div class="field">
                 <label for="book_description">Description:</label>
-                <textarea id="book_description" class="input">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, illo repellendus! Dicta fugit labore incidunt nam sed assumenda, alias quae.</textarea>
+                <textarea id="book_description" name="book_description" class="input"><?php echo $book_description; ?></textarea>
             </div>
-            <button type="button" id="save_changes">Save Changes</button>
+            <button type="submit" id="save_changes">Save Changes</button>
         </form>
     </section>
     <section class="user_comment">
