@@ -20,11 +20,8 @@
 
     <section class="book_detail">
         <?php 
-            if(isset($_GET["Book_ID"])) {
+            if(isset($_GET["Book_ID"]) && filter_var($_GET['Book_ID'], FILTER_VALIDATE_INT)) {
                 $Book_ID = $_GET["Book_ID"];
-                if ($Book_ID < 0) {
-                    header("Location: http://localhost/Real-web-lab/index.php?page=books");
-                }
                 $book_query = 'SELECT * FROM Book WHERE Book_ID=' . $Book_ID;
                 $book_row = $connection->query($book_query);
                 if ($book_row->num_rows == 1) { 
@@ -53,7 +50,6 @@
                         }
                         echo '<p id="genre">Genres: ' . $book["Genre"] . '</p>';
                         echo '<p id="description">Descriptions: ' . $book["Descriptions"] . '</p>';
-
                         
                         echo '<div class="condition">';
                             echo '<p>Condition</p>';
@@ -63,7 +59,6 @@
                                 echo '<button class="digital_btn">Digital</button>';
                             echo '</div>';
                         echo '</div>';
-
                         
                         if(!isset($_SESSION["is_logged_in"])) {
                             echo '<form class="order_detail" action="./signin.php" method="GET">';
@@ -79,10 +74,10 @@
                                 echo '</form>';
                             }
                             else {
-                                echo '<form class="order_detail" action="" method="POST">';
+                                echo '<div class="order_detail">';
                                     echo '<button id="edit_book_button">Edit Book</button>';
                                     echo '<button id="delete_book_button">Delete Book</button>';
-                                echo '</form>';
+                                echo '</div>';
                             }
                         }
                     echo '</div>';
@@ -90,7 +85,8 @@
                 else {
                     echo 'No such books in our library :(';
                 }
-                
+            } else {
+                echo 'No such books in our library :(';
             }
         ?>
     </section>

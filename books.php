@@ -19,7 +19,8 @@
     }
     $books_per_page = 10;
     $num_adjacents_page = 2;
-    
+    $_SESSION["books_per_page"] = $books_per_page;
+    $_SESSION["num_adjacents_page"] = $num_adjacents_page;
     // Calculate the offset to know which range of books to retrieve
     $offset = ($_SESSION["page_number"] - 1) * $books_per_page;
 
@@ -27,8 +28,9 @@
     $books_query = "SELECT * FROM Book";
     $books_query_result = $connection->query($books_query);
     $total_books = $books_query_result->num_rows;
-
+    $_SESSION["total_books"] = $total_books;
     $total_pages = ceil($total_books / $books_per_page);
+    $_SESSION["total_pages"] = $total_books;
     $current_page_query = "";
 
 
@@ -80,30 +82,31 @@
     </section>
 
     <section class="filter_area">
-        <div class="search_area">
-            <input type="text" id="search_bar" placeholder="Search something...">
-            <button id="search_button"><img src="image/search.png"></button>
+        <form class="search_area">
+            <input type="text" id="search_bar" placeholder="Search something..." onkeyup="show_result(this.value, <?php echo $_SESSION['page_number'];?>)">
+            <button type="submit" id="search_button"><img src="image/search.png"></button>
             <?php 
                 if(isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]) {
                     echo '<button id="add_book_btn">Add book</button>';
                 }
             ?>
-        </div>
+        </form>
 
         <form class="sort_form" method="post" action="./logical/sort_form.php">
             <select for="sort_by" id="sort_by" name="sort_by">
-                <option value="_">Sort by</option>
-                <option value="title">Title</option>
-                <option value="price">Price</option>
+                <option value="_" <?php echo ($_SESSION['sort_by'] == '_') ? 'selected' : ''; ?>>Sort by</option>
+                <option value="title" <?php echo ($_SESSION['sort_by'] == 'title') ? 'selected' : ''; ?>>Title</option>
+                <option value="price" <?php echo ($_SESSION['sort_by'] == 'price') ? 'selected' : ''; ?>>Price</option>
             </select>
-        
+
             <select for="sort_order" id="sort_order" name="sort_order">
-                <option value="_">Sort order</option>
-                <option value="ASC">Ascending</option>
-                <option value="DESC">Descending</option>
+                <option value="_" <?php echo ($_SESSION['sort_order'] == '_') ? 'selected' : ''; ?>>Sort order</option>
+                <option value="ASC" <?php echo ($_SESSION['sort_order'] == 'ASC') ? 'selected' : ''; ?>>Ascending</option>
+                <option value="DESC" <?php echo ($_SESSION['sort_order'] == 'DESC') ? 'selected' : ''; ?>>Descending</option>
             </select>
-            <input id ="confirm_sort" type="submit" value="Sort"/>
+            <input id="confirm_sort" type="submit" value="Sort" />
         </form>
+
         
     </section>
                 
@@ -149,7 +152,8 @@
                         echo '<img id = "book_img" src="'. $image_src .'">';
                         echo '<div class="book_info">';
                             echo '<p id="book_title">';
-                                echo '<a href="index.php?page=product&Book_ID=' . $book["Book_ID"] . '">' . $book["Title"] . '</a>';
+                                echo '<a href="index.php?page=product&Book_ID=' . $book["Book_ID"] . '">' . $book["Title"] . '</a> <br>';
+                                echo '<a>Genre: ' . $book["Genre"] . '</a>';
                             echo '</p>';
                             echo '<div class="star_container">';
                                 $stars_query = 'SELECT r.Stars FROM Review r JOIN Order_item oi ON r.Review_ID = oi.Review_ID WHERE oi.Book_ID = ' . $book["Book_ID"];
@@ -183,6 +187,7 @@
     <?php require_once './html_component/benefit.php'; ?>
     <?php require_once './html_component/footer.php'; ?>
     <script src="./js/add_book.js"></script>
+    <script src="./js/live_search.js"></script>
 </body>
 
 
