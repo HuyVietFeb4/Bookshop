@@ -2,7 +2,10 @@
     if(!isset($_SESSION)) 
     { 
         session_start(); 
-    } 
+    }
+    if(!isset($_SESSION['is_logged_in'])) {
+        header("Location: http://localhost/Real-web-lab/index.php?page=signin");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,12 +18,11 @@
 </head>
 
 <body>
-
     <?php require_once './html_component/header.php'; ?>
-
     <section class="user_profile">
         <div class="profile_header">
-            <img id="profile_pic" src="image/default_profile.png" alt="Profile Picture">
+            <?php echo '<img id="profile_pic" src=./image/'. $_SESSION['PFP_URL'] .' alt="Profile Picture">';
+            ?>
             <div class="profile_info">
                 <?php 
                     if (!$_SESSION["is_admin"]) {
@@ -39,32 +41,39 @@
     </section>
 
     <section class="modal">
-        <form id="edit_profile_form">
+        <form id="edit_profile_form" action="./logical/edit_profile.php" method="POST" enctype="multipart/form-data">
             <div class="form_header">
                 <h2>Edit Profile</h2>
                 <image id="pop_out_btn" src="./image/x-mark.png"></image>
             </div>
-            <div class="field">
-                <label for="profile_picture">Change Profile Picture:</label>
-                <input type="file" id="profile_picture" name="profile_picture" accept=".png, .jpg, .jpeg">
-            </div>
-            <div class="field">
-                <label for="name">Username:</label>
-                <input type="text" id="name" value="Your Name">
-            </div>
-            <div class="field">
-                <label for="email">Email Account:</label>
-                <input type="email" id="email" value="yourname@gmail.com">
-            </div>
-            <div class="field">
-                <label for="password">Password:</label>
-                <input type="password" id="password">
-            </div>
-            <div class="field">
-                <label for="confirm_password">Confirm password:</label>
-                <input type="password" id="confirm_password">
-            </div>
-            <button type="button" id="save_changes">Save Changes</button>
+            <?php
+                if (isset($_SESSION["is_logged_in"])) {
+                    $name_value = isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] ? $_SESSION["Admin_name"] : ($_SESSION["User_name"] ?? '');
+                    $email_value = $_SESSION["Email"] ?? '';
+                    $pfp_value = $_SESSION["PFP_URL"] ?? '';
+                echo '<div class="field">';
+                    echo '<label for="profile_picture">Change Profile Picture:</label>';
+                    echo '<input type="file" id="profile_picture" name="profile_picture" accept=".png, .jpg, .jpeg, .gif">';
+                echo '</div>';
+                echo '<div class="field">';
+                    echo '<label for="name">Your name:</label>';
+                    echo '<input type="text" name="name" id="name" value="' . $name_value . '" placeholder="Your Name">';
+                echo '</div>';
+                echo '<div class="field">';
+                    echo '<label for="email">Email address:</label>';
+                    echo '<input type="email" name="email" id="email" value="' . $email_value . '" placeholder="example@gmail.com">';
+                echo '</div>';
+                echo '<div class="field">';
+                    echo '<label for="password">New password:</label>';
+                    echo '<input type="password" name="password" id="password" placeholder="Enter Password">';
+                echo '</div>';
+                echo '<div class="field">';
+                    echo '<label for="confirm_password">Confirm password:</label>';
+                    echo '<input type="password" name="confirm_password" id="confirm_password" placeholder="Re-enter Password">';
+                echo '</div>';
+                echo '<button type="submit" id="save_changes">Save Changes</button>';
+                }
+            ?>
         </form>
     </section>
     

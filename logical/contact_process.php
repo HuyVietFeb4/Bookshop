@@ -16,11 +16,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $add_contact_statement->bind_param("ssss", $name, $email, $subject, $message);
         $add_contact_statement->execute();
         $connection->close();
-        header("Location: http://localhost/Real-web-lab/index.php?page=contact");
     }
     else {
         echo 'Invalid input, try again';
         $connection->close();
-        header("Location: http://localhost/Real-web-lab/index.php?page=contact");
     }
 }
+header('Location: ' . $_SERVER['HTTP_REFERER']);

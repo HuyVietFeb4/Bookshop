@@ -82,15 +82,14 @@
     </section>
 
     <section class="filter_area">
-        <form class="search_area">
+        <div class="search_area">
             <input type="text" id="search_bar" placeholder="Search something..." onkeyup="show_result(this.value, <?php echo $_SESSION['page_number'];?>)">
-            <button type="submit" id="search_button"><img src="image/search.png"></button>
             <?php 
                 if(isset($_SESSION["is_admin"]) && $_SESSION["is_admin"]) {
                     echo '<button id="add_book_btn">Add book</button>';
                 }
             ?>
-        </form>
+        </div>
 
         <form class="sort_form" method="post" action="./logical/sort_form.php">
             <select for="sort_by" id="sort_by" name="sort_by">
@@ -111,7 +110,7 @@
     </section>
                 
     <section class="add_book">
-        <form id="add_book_form">
+        <form id="add_book_form" method="POST" action="./logical/add_book.php" enctype="multipart/form-data">
             <div class="form_header">
                 <h2>Add Book Detail</h2>
                 <image id="pop_out_btn" src="./image/x-mark.png"></image>
@@ -122,21 +121,21 @@
             </div>
             <div class="field">
                 <label for="book_name">Book Name:</label>
-                <input type="text" id="book_name">
+                <input type="text" id="book_name" name="book_name">
             </div>
             <div class="field">
                 <label for="book_price">Price:</label>
-                <input type="email" id="book_price">
+                <input type="text" id="book_price" name="book_price">
             </div>
             <div class="field">
                 <label for="book_genre">Book Genre:</label>
-                <input type="text" id="book_genre">
+                <input type="text" id="book_genre" name="book_genre">
             </div>
             <div class="field">
                 <label for="book_description">Description:</label>
-                <textarea id="book_description" class="input"></textarea>
+                <textarea id="book_description" class="input" name="book_description"></textarea>
             </div>
-            <button type="button" id="save_changes">Save Changes</button>
+            <button type="submit" id="save_changes">Save Changes</button>
         </form>
     </section>
 
