@@ -3,6 +3,7 @@
     { 
         session_start(); 
     } 
+    require_once "./logical/database_connect.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,21 +24,19 @@
 
     <section class="filter_area">
         <div class="search_area">
-            <input type="text" id="search_bar" placeholder="Search something...">
-            <button id="search_button"><img src="image/search.png"></button>
+            <input type="text" id="search_bar" placeholder="Search something..." onkeyup="show_result_genre(this.value, <?php echo $_SESSION['page_number'];?>)">
         </div>
 
-        <form class="sort_form">
+        <form class="sort_form" method="post" action="./logical/sort_form.php">
             <select for="sort_by" id="sort_by" name="sort_by">
                 <option value="_">Sort by</option>
-                <option value="title">Title</option>
-                <option value="star">Stars</option>
+                <option value="genre" <?php echo ($_SESSION['sort_by'] == 'genre') ? 'selected' : ''; ?>>Genre</option>
             </select>
         
             <select for="sort_order" id="sort_order" name="sort_order">
                 <option value="_">Sort order</option>
-                <option value="ASC">Ascending</option>
-                <option value="DESC">Descending</option>
+                <option value="ASC" <?php echo ($_SESSION['sort_order'] == 'ASC') ? 'selected' : ''; ?>>Ascending</option>
+                <option value="DESC" <?php echo ($_SESSION['sort_order'] == 'DESC') ? 'selected' : ''; ?>>Descending</option>
             </select>
             <input id ="confirm_sort" type="submit" value="Sort"/>
         </form>
@@ -47,49 +46,23 @@
     <section class="genres">
         
         <div class="genre_list">
-            <div class="genre_card">
-                <img id = "genre_img" src="image/books/default.jpg">
-                <p id="genre_name">Something</p>
-            </div>
-
-            <div class="genre_card">
-                <img id = "genre_img" src="image/books/default.jpg">
-                <p id="genre_name">Something</p>
-            </div>
-
-            <div class="genre_card">
-                <img id = "genre_img" src="image/books/default.jpg">
-                <p id="genre_name">Something</p>
-            </div>
-
-            <div class="genre_card">
-                <img id = "genre_img" src="image/books/default.jpg">
-                <p id="genre_name">Something</p>
-            </div>
-
-            <div class="genre_card">
-                <img id = "genre_img" src="image/books/default.jpg">
-                <p id="genre_name">Something</p>
-            </div>
-
-            <div class="genre_card">
-                <img id = "genre_img" src="image/books/default.jpg">
-                <p id="genre_name">Something</p>
-            </div>
-
-            <div class="genre_card">
-                <img id = "genre_img" src="image/books/default.jpg">
-                <p id="genre_name">Something</p>
-            </div>
+            <?php 
+                $genre_query = 'SELECT DISTINCT Genre FROM Book ORDER BY RAND();';
+                if($_SESSION["sort_by"] != "_" && $_SESSION["sort_order"] != "_") { // Enough sort categories selected
+                    $genre_query = 'SELECT DISTINCT Genre FROM Book ORDER BY ' . $_SESSION["sort_by"] . ' ' . $_SESSION["sort_order"];
+                }
+                $genres = $connection->query($genre_query);
+                if($genres->num_rows > 0) {
+                    while($genre = $genres->fetch_assoc()) {
+                        echo '<div class="genre_card">';
+                            echo '<a href="index.php?page=books&genre=' . urlencode($genre["Genre"]) . '">';
+                            echo '<img id = "genre_img" src="image/books/default.jpg">';
+                            echo '<p id="genre_name">' . $genre["Genre"] . '</p>';
+                        echo '</div>';
+                    }
+                }
+            ?>
         </div>        
-    </section>
-    
-    <section class="page_area">
-        <div id="prev_page">Previous</div>
-        <div id="main_page">1</div>
-        <div id="page">2</div>
-        <div id="page">3</div>
-        <div id="next_page">Next</div>
     </section>
 
     <section class="benefit_area">
@@ -126,6 +99,7 @@
         </div>
     </section>
     <?php require_once './html_component/footer.php'; ?>
+    <script src="./js/live_search_genre.js"></script>
 </body>
 
 

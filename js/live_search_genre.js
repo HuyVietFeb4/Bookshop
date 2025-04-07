@@ -1,5 +1,5 @@
-function show_result(str_query, page_number) {
-    var book_list = document.querySelector(".book_list");
+function show_result_genre(str_query) {
+    var genre_list = document.querySelector(".genre_list");
 
     if(str_query.length == 0) {
         var xhr = new XMLHttpRequest();
@@ -10,17 +10,17 @@ function show_result(str_query, page_number) {
                 document.close();
             }
         }
-        xhr.open("GET", "./index.php?page=books&page_number=" + page_number, true);
+        xhr.open("GET", "./index.php?page=genres", true);
         xhr.send();
     }
     else {
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange=function() {
             if(this.readyState == 4 && this.status == 200) {
-                book_list.innerHTML = this.responseText;
+                genre_list.innerHTML = this.responseText;
             }
         }
-        xhr.open("GET", "./logical/live_search.php?book_search=" + encodeURIComponent(str_query), true);
+        xhr.open("GET", "./logical/live_search_genre.php?genre_search=" + encodeURIComponent(str_query), true);
         xhr.send();
     }
 }   

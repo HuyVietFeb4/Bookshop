@@ -9,6 +9,6 @@
 
         $_SESSION["sort_by"] = $sort_by;
         $_SESSION["sort_order"] = $sort_order;
-        header("Location: http://localhost/Real-web-lab/index.php?page=books");
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
     

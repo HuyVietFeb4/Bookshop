@@ -13,6 +13,7 @@
     if(!isset($_SESSION["sort_by"])) {
         $_SESSION["sort_by"] = '_';
     }
+    $genre = isset($_GET["genre"]) ? $_GET["genre"] : ''; 
     $_SESSION["page_number"] = isset($_GET["page_number"]) ? (int)$_GET["page_number"] :  1;
     if($_SESSION["page_number"] <= 0) {
         $_SESSION["page_number"] = 1;
@@ -187,6 +188,13 @@
     <?php require_once './html_component/footer.php'; ?>
     <script src="./js/add_book.js"></script>
     <script src="./js/live_search.js"></script>
+    <script>
+        <?php if (!empty($genre)) { ?>
+            document.addEventListener("DOMContentLoaded", function() {
+                show_result('<?php echo addslashes($genre); ?>', <?php echo $_SESSION['page_number']; ?>);
+            });
+        <?php } ?>
+    </script>
 </body>
 
 
