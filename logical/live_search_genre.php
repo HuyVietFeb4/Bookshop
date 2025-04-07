@@ -28,6 +28,7 @@ if(isset($_GET["genre_search"])) {
                     echo '<a href="index.php?page=books&genre=' . urlencode($genre["Genre"]) . '">';
                     echo '<img id = "genre_img" src="image/books/default.jpg">';
                     echo '<p id="genre_name">' . $genre["Genre"] . '</p>';
+                    echo '</a>';
                 echo '</div>';
             }
         }

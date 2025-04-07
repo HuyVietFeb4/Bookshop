@@ -2,7 +2,7 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname(dirname($_SERVER['PHP_SELF'])), '/\\');
 require_once "./database_connect.php";
 require_once "./function.php";
 
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             echo "Book successfully deleted.";
             // Redirect back to the book list or another page (optional)
-            header("Location: ../index.php?page=books");
+            header("Location: $base_url/index.php?page=books");
             exit;
         } else {
             echo "Error deleting book: " . $connection->error;
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Close statements and connection
-    header("Location: ../index.php?page=books");
+    header("Location: $base_url/index.php?page=books");
     $fetch_stmt->close();
     $delete_stmt->close();
     $connection->close();

@@ -3,8 +3,9 @@
     { 
         session_start(); 
     }
+    $base_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']);
     if(!isset($_SESSION['is_logged_in'])) {
-        header("Location: http://localhost/Real-web-lab/index.php?page=signin");
+        header("Location: $base_url/index.php?page=signin");
     }
 ?>
 <!DOCTYPE html>

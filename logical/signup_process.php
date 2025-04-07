@@ -3,6 +3,7 @@ if(!isset($_SESSION))
 { 
     session_start(); 
 } 
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname(dirname($_SERVER['PHP_SELF'])), '/\\');
 require_once "./database_connect.php";
 require_once "./function.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -20,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result->num_rows > 0) {
             echo "Email is already registered. Please use another email or sign in with this email.";
-            header("Location: http://localhost/Real-web-lab/index.php?page=signun");
+            header("Location: $base_url/index.php?page=signup");
             $connection->close();
             exit();
         } else {
@@ -30,12 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             add_user($connection, $email, $username, $token);
             echo "Sign up successfully, redirect to sign in page...";
             $connection->close();
-            header("Location: http://localhost/Real-web-lab/index.php?page=signin");
+            header("Location: $base_url/index.php?page=signin");
         }
     }
     else {
         echo "Invalid input, try again";
         $connection->close();
-        header("Location: http://localhost/Real-web-lab/index.php?page=signup");
+        header("Location: $base_url/index.php?page=signup");
     }
 }

@@ -3,6 +3,7 @@ if(!isset($_SESSION))
 { 
     session_start(); 
 } 
+$base_url = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname(dirname($_SERVER['PHP_SELF'])), '/\\');
 require_once "./database_connect.php";
 require_once "./function.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -39,11 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["is_admin"] = false;
                 echo "Sign in successfully";
                 $connection->close();
-                header("Location: http://localhost/Real-web-lab/index.php?page=home");
+                header("Location: $base_url/index.php?page=home");
             } else {
                 echo "Wrong email/password, try again.";
                 $connection->close();
-                header("Location: http://localhost/Real-web-lab/index.php?page=signin");
+                header("Location: $base_url/index.php?page=signin");
             }
         } else if ($admin_result->num_rows == 1){
             $admin = $admin_result->fetch_assoc();
@@ -61,24 +62,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["is_admin"] = true;
                 echo "Sign in successfully";
                 $connection->close();
-                header("Location: http://localhost/Real-web-lab/index.php?page=home");
+                header("Location: $base_url/index.php?page=home");
             } else {
-                echo $token . '<br>';
-                echo $admin["Passwords"] . '<br>';
                 echo "Wrong email/password, try again.";
                 $connection->close();
-                // header("Location: http://localhost/Real-web-lab/index.php?page=signin");
+                header("Location: $base_url/index.php?page=signin");
             }
         }
         else {
             echo "Could not find your account, try again";
             $connection->close();
-            header("Location: http://localhost/Real-web-lab/index.php?page=signin");
+            header("Location: $base_url/index.php?page=signin");
         }
     }
     else {
         echo "Invalid input, try again";
         $connection->close();
-        header("Location: http://localhost/Real-web-lab/index.php?page=signin");
+        header("Location: $base_url/index.php?page=signin");
     }
 }
