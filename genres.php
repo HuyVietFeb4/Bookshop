@@ -3,6 +3,15 @@
     { 
         session_start(); 
     } 
+    if(!isset($_SESSION["page_number"])) {
+        $_SESSION["page_number"] = 1;
+    }
+    if(!isset($_SESSION["sort_order"])) {
+        $_SESSION["sort_order"] = '_';
+    }
+    if(!isset($_SESSION["sort_by"])) {
+        $_SESSION["sort_by"] = '_';
+    }
     require_once "./logical/database_connect.php";
 ?>
 <!DOCTYPE html>
