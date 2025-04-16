@@ -65,10 +65,10 @@
                                 $email_value = $_SESSION["Email"];
                             }
                             echo '<label for="name">Your name</label>';
-                            echo '<input type="text" name="name" id="name" value="' . $name_value . '">';
+                            echo '<input type="text" name="name" id="name" value="' . $name_value . '" readonly>';
 
                             echo '<label for="email">Email address</label>';
-                            echo '<input type="text" name="email" id="email" value="' . $email_value . '">';
+                            echo '<input type="text" name="email" id="email" value="' . $email_value . '" readonly>';
 
                             echo '<label for="subject">Subject</label>';
                             echo '<input type="text" name="subject" id="subject" placeholder="subject">';
