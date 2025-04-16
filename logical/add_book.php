@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Define the upload path
-    $filename = $_FILES["book_cover"]["name"] . $ext;
+    $filename = $_FILES["book_cover"]["name"];
     $upload_path = "../image/books/" . $filename;
 
     // Upload the file

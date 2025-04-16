@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows == 1) {
         $book = $result->fetch_assoc();
-        $cover_path = "../image/books" . $book["Image_URL"];
+        $cover_path = "../image/books/" . $book["Image_URL"];
 
         // Delete the book record from the database
         $delete_query = "DELETE FROM Book WHERE Book_ID = ?";
