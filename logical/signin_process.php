@@ -31,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($token == $user["Passwords"]) { 
                 session_regenerate_id(true);
                 $_SESSION["Email"] = $email;
-                $_SESSION["Passwords"] = $token;
                 $_SESSION["User_name"] = $user["User_name"];
                 $_SESSION["Money_spent"] = $user["Money_spent"];
                 $_SESSION["Users_ID"] = $user["Users_ID"];
@@ -54,7 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($token == $admin["Passwords"]) { 
                 session_regenerate_id(true);
                 $_SESSION["Email"] = $email;
-                $_SESSION["Passwords"] = $token;
                 $_SESSION["Admin_name"] = $admin["Admin_name"];
                 $_SESSION["Admins_ID"] = $admin["Admins_ID"];
                 $_SESSION["PFP_URL"] = $admin["PFP_URL"];

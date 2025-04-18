@@ -1,0 +1,24 @@
+@import url("component/body.css");
+/*********************************************************************** Header ***********************************************************************/
+@import url("component/header.css");
+/*********************************************************************** Footer section ***********************************************************************/
+@import url("component/footer.css");
+/*********************************************************************** Responsive section ***********************************************************************/
+@import url("component/responsive.css");
+
+.locations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#google_map {
+    height: 500px;
+    border-style: solid;
+    width: 95%;
+}
+
+#all_data {
+    display: none;
+}

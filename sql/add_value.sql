@@ -50,3 +50,13 @@ VALUES
 
 INSERT INTO Admins (Email, Admin_name, Passwords, PFP_URL) VALUES
     ('viet.nguyenlodaunv1@hcmut.edu.vn', 'Huy Viet', 'naungulmao', 'default_profile.png');
+
+INSERT INTO Locations (Location_name, Latitude, Longitude)
+VALUES 
+('University of Technology', 10.773349450000001, 106.65963187043113),
+('University of Natural Sciences', 10.7625844, 106.68169483128824),
+('University of Social Sciences and Humanities', 10.7860229, 106.70305281587628),
+('International University', 10.8778839, 106.8015666),
+('University of Information Technology', 10.8694943, 106.80330730177201),
+('University of Economics and Law', 10.871313149999999, 106.77853162622031),
+('VNU-HCM High School for the Gifted', 10.8780291, 106.79917753732946);
