@@ -49,7 +49,7 @@ VALUES
     ('Science Fiction', 17.500, 'Neuromancer', 'William Gibson''s groundbreaking novel that defined the cyberpunk genre.', 'neuromancer.jpg');
 
 INSERT INTO Admins (Email, Admin_name, Passwords, PFP_URL) VALUES
-    ('viet.nguyenlodaunv1@hcmut.edu.vn', 'Huy Viet', 'naungulmao', 'default_profile.png');
+    ('viet.nguyenlodaunv1@hcmut.edu.vn', 'Huy Viet', 'MyBook', 'default_profile.png');
 
 INSERT INTO Locations (Location_name, Latitude, Longitude)
 VALUES 

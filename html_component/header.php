@@ -15,6 +15,7 @@ if(!isset($_SESSION))
             <li><a href="index.php?page=books">Books</a></li>
             <li><a href="index.php?page=genres">Genres</a></li>
             <li><a href="index.php?page=contact">Contact</a></li>
+            <li><a href="index.php?page=locations">Our locations</a></li>
         </ul>
     </nav>
     <div class="user_area">
